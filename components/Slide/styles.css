@@ -18,7 +18,6 @@
   border-radius: 2rem 0;
   background: hsla(179, 50%, 20%, .5);
   box-shadow: 4px 8px 12px 0px hsla(0, 50%, 0%, 0.2);
-  backdrop-filter: blur(5rem);
   color: var(--blue);
 }
 .card-container {
@@ -40,18 +39,18 @@
 }
 
 .card-1 {
-  -webkit-animation: slide-une 5s ease-in-out infinite both;
-          animation: slide-une 5s ease-in-out infinite both;
+  -webkit-animation: slide-une 10s ease-in-out infinite both;
+          animation: slide-une 10s ease-in-out infinite both;
 }
 
 .card-2 {
-  -webkit-animation: slide-deu 5s ease-in-out infinite both;
-          animation: slide-deu 5s ease-in-out infinite both;
+  -webkit-animation: slide-deu 10s ease-in-out infinite both;
+          animation: slide-deu 10s ease-in-out infinite both;
 }
 
 .card-3 {
-  -webkit-animation: slide-tro 5s ease-in-out infinite both;
-          animation: slide-tro 5s ease-in-out infinite both;
+  -webkit-animation: slide-tro 10s ease-in-out infinite both;
+          animation: slide-tro 10s ease-in-out infinite both;
 }
 
 /* Keyframes */

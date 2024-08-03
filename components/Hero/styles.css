@@ -35,6 +35,8 @@ h2 {
 p {
   margin: 1rem;
   color: hsl(179, 37%, 90%);
+  font-size: 0.75rem;
+  line-height: 1.5rem;
 }
 /* Medias */
 @media (width > 450px) {

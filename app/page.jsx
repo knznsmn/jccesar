@@ -1,4 +1,6 @@
 import Hero from '@components/Hero'
+import Slide from '@components/Slide'
+import Social from '@components/Social'
 import './styles.css'
 
 export const metadata = {
@@ -9,7 +11,6 @@ export default function Home() {
     <>
       <main className="main">
         <Hero />
-
       </main>
     </>
   );
