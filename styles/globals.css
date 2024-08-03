@@ -1,0 +1,60 @@
+:root {
+  /* Colors */
+  --blue: hsl(179, 95%, 34%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* General Styling */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  /* max-width: 100vw; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+main {
+  width: 100%;
+  flex: 1;
+}
+
+/* Tweaks */
+.gradient {
+  background: linear-gradient(90deg, 
+  hsl(160, 95%, 34%), 
+  hsl(190, 95%, 34%),
+  hsl(200, 95%, 34%),
+  hsl(190, 95%, 34%),
+  hsl(160, 95%, 34%)
+  ) 0% 0% / 200% 100% padding-box text;
+  user-select: none;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animations */
+.spin {
+    box-sizing: border-box;
+    border-color: var(--toastify-spinner-color-empty-area);
+    border-right-color: var(--toastify-spinner-color);
+    animation: spin 5.65s linear infinite;
+}
+
+/* Animation Keyframes*/
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

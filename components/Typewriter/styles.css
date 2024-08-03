@@ -1,0 +1,19 @@
+/* TypewriterEffect.css */
+.typewriter-container {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid #000; /* Cursor */
+  animation: blinkCursor 0.75s step-end infinite;
+}
+
+@keyframes blinkCursor {
+  from, to { border-color: transparent; }
+  50% { border-color: #000; }
+}
+
+.typewriter-text {
+  display: inline;
+}
