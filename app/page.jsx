@@ -4,7 +4,7 @@ import Social from '@components/Social'
 import './styles.css'
 
 export const metadata = {
-  title: 'Home',
+  title: 'Home | Julius C. Cesar',
 };
 export default function Home() {
   return (

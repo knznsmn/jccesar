@@ -1,5 +1,7 @@
 
-
+:root {
+  --slide-color: hsla(179, 80%, 20%, .9);
+}
 .show {
   display: flex;
   justify-content: center;
@@ -16,7 +18,7 @@
   height: 10rem;
   overflow: auto;
   border-radius: 2rem 0;
-  background: hsla(179, 50%, 20%, .5);
+background: var(--slide-color);
   box-shadow: 4px 8px 12px 0px hsla(0, 50%, 0%, 0.2);
   color: var(--blue);
 }
