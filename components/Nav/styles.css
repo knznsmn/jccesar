@@ -1,6 +1,4 @@
 header {
-  width: 100%;
-  max-width: 1200px;
   background-color: hsla(179, 80%, 90%, .05);
   backdrop-filter: blur(1rem);
 }

@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import copy from '@public/icons/copy.svg'
 import clip from '@public/icons/clipboard.svg'
+import './styles.css'
 
 const Contact = () => {
 
@@ -18,10 +19,10 @@ const Contact = () => {
     };
 
   return (
-    <div className="email">
+    <div className="contact">
         
-        <button onClick={handleCopyEmail}>
-            mail@jccesar.com
+        <button className='email' onClick={handleCopyEmail}>
+            Copy My Email Address
             <Image src={icon} alt="Click here to copy my email address"/>
         </button>
     </div>

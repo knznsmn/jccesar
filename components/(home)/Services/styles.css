@@ -21,7 +21,7 @@ ul.services {
   text-decoration: none;
   border-top: .25rem solid orange;
   color: teal;
-  scale: 1.5;
+  scale: .8;
 }
 
 .services li a:active {
