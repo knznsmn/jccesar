@@ -4,6 +4,7 @@ import Link from 'next/link'
 import './styles.css'
 
 const Nav = () => {
+ 
   return (
     <header>
       <nav>
@@ -13,10 +14,10 @@ const Nav = () => {
             alt="knznsmn home"
           />
         </Link>
-        <ul className='gradient'>
-          <li><Link href="/projects">Projects</Link></li>
-          <li><Link href="/blog">Blog</Link></li>
-          <li><Link href="/about">About Me</Link></li>
+        <ul className='menu gradient-white'>
+          {/* <li><Link href="/projects">Projects</Link></li>
+          <li><Link href="/blog">Blog</Link></li> */}
+          <li className='gradient-roll'><Link href="/about">About Me</Link></li>
         </ul>
       </nav>
     </header>

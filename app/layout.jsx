@@ -1,9 +1,13 @@
 import Pulse from '@components/Pulse';
 import Nav from '@components/Nav';
 import Footer from '@components/Footer';
-import { Inter } from 'next/font/google';
+import { Abril_Fatface, Inter} from 'next/font/google';
 import '@styles/globals.css';
 
+const abril = Abril_Fatface({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -13,7 +17,7 @@ export const metadata = {
 
 function Layout({children}) {
   return (
-    <html Lang="en">
+    <html lang="en">
       <body>
         <Pulse />
         <Nav />

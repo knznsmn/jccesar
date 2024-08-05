@@ -1,0 +1,41 @@
+h1.abril {
+  font-size: 3.5rem;
+}
+p.pitch {
+  width: 50%;
+  margin: 2rem;
+  text-align: center;
+}
+.name {
+  border-left: orange solid .5rem;
+  padding-left: 1rem;
+  /* margin-left: -1.5rem; */
+}
+
+.pitch span:not(:nth-child(1)) {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  opacity: .9;
+}
+
+.pitch span:nth-child(1) {
+  color: silver;
+}
+.pitch span:nth-child(2) {
+  color: yellow;
+}
+.pitch span:nth-child(3) {
+  color: mediumturquoise;
+}
+.pitch span:nth-child(4) {
+  color: wheat;
+}
+.pitch span:nth-child(5) {
+  font-family: 'Inter', sans-serif;
+  font-size: medium;
+  text-transform: none;
+  font-weight: 800;
+  color: skyblue;
+  opacity: 1;
+}

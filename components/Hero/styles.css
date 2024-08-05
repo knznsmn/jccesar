@@ -1,3 +1,6 @@
+:root {
+  --side-color: hsla(179, 85%, 15%, .1);
+}
 .hero-container {
   display: flex;
   flex-direction: column;
@@ -7,10 +10,13 @@
 }
 .hero-left {
   margin: 1rem;
+  padding: 1rem;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: var(--side-color);
+  backdrop-filter: blur(5rem);
 }
 .hero-right {
   margin: 1rem;
@@ -37,7 +43,9 @@ p {
   color: hsl(179, 37%, 90%);
   font-size: 0.75rem;
   line-height: 1.5rem;
+  text-align: left;
 }
+
 /* Medias */
 @media (width > 650px) {
   .hero-container {

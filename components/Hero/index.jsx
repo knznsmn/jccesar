@@ -11,10 +11,8 @@ const Hero = () => {
 
         <div className="hero-left">
             <h1 className='gradient-white'>Hi! I'm Julius</h1>
-            <hr />
-            <p>Tsadas asd a dafas fas dafa sda das das dasd
-                asd asd a f as fasdasdasdasdas dasdas ad ad ad asd asd.
-                ad asd asdasdasdasd.
+            <p>
+              "I am passionate about web design and development, offering expertise in crafting and deploying websites for individuals and small businesses, enabling them to establish a robust online presence."
             </p>
             <h2 className='gradient-white'>Design. Develop. Deploy.</h2>
             <Slide />

@@ -24,10 +24,10 @@
     opacity: 0;
     background: var(--base);
     background: linear-gradient(135deg, var(--base) 30%, var(--noir) 50%, var(--base) 70%); 
-    animation: gradient 5s ease-in-out infinite;
+    animation: pulse 10s ease-in-out infinite;
 }
 
-@keyframes gradient {
+@keyframes pulse {
     0%, 100% {
         opacity: 0;
     }

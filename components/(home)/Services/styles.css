@@ -1,0 +1,35 @@
+ul.services {
+  margin: auto 1rem;
+  margin-bottom: .5rem;
+  display: flex;
+}
+
+.services li a:link {
+  font-size: small;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  transition: all .2s ease-in-out;
+}
+
+.services li a:visited {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+.services li a:hover {
+  text-decoration: none;
+  border-top: .25rem solid orange;
+  color: teal;
+  scale: 1.5;
+}
+
+.services li a:active {
+  text-decoration: none;
+}
+@media (width > 660px) {
+  ul.services {
+    display: flex;
+    margin-bottom: auto;
+  }
+}
