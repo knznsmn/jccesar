@@ -1,12 +1,7 @@
 footer {
     display: flex;
-    /* flex-direction: column; */
+    background: transparent;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     font-size: smaller;
-}
-@media (width > 660px) {
-    footer {
-        flex-direction: row;
-    }
 }

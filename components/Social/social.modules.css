@@ -1,0 +1,13 @@
+.social {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.social img {
+  width: 1rem;
+  transition: all .2s ease-in-out;
+}
+.social img:hover {
+  scale: 1.5;
+}

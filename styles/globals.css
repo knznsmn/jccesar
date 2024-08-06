@@ -1,13 +1,23 @@
 :root {
-  /* Colors */
-  --blue: hsl(179, 95%, 34%);
-  --white: hsl(160, 95%, 90%);
-  --orange: orange;
-}
-::-webkit-scrollbar {
-    display: none;
+  --min-width: 360px;
+/* Hue  */
+  --hue-noir: hsla(179, 100%, 10%, 1);
+  --hue-blan: hsla(168, 100%, 95%, 1);
+  --hue-bleu: hsla(202, 61%, 86%, 1);
+  --hue-teal: hsla(168, 41%, 57%, 1);
+  --hue-jcce: hsla(179, 97%, 67%, 1);
+  --hue-sole: hsla(185, 97%, 37%, 1);
+  --hue-vert: hsla(73, 53%, 48%, 1);
+  --hue-jaun: hsla(50, 96%, 48%, 1);
+  --hue-plum: hsla(11, 89%, 53%, 1);
+
+/* Fonts */
+  --font-serf: 'Abril Fatface';
+  --font-sans: 'Inter';
+  --font-mono: 'Courier New';
 }
 
+/* Vendor Default Resets */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -15,10 +25,6 @@
 }
 
 /* General Styling */
-/* html {
-  height: 100%;
-  width: 100%;
-} */
 body {
   width: 100vw;
   height: 100vh;
@@ -28,59 +34,48 @@ body {
   align-items: center;
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
-  color: var(--white);
-  font-size: 16px;
+  color: var(--hue-blan);
+  font-size: 18px;
 }
 header, main, footer {
   max-width: 1200px;
   width: 100%;
 }
 main {
+  z-index: 10;
   height: 100%;
-  min-width: 360px;
-  overflow: scroll;
+  min-width: var(--min-width);
+  overflow-y: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 a:link {
   font-size: small;
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--blue)
+  color: var(--hue-bleu)
 }
-
 a:visited {
   text-decoration: none;
-  color: var(--blue);
+  color: var(--hue-vert);
 }
-
 a:hover {
   text-decoration: none;
 }
-
 a:active {
   text-decoration: none;
 }
 
-/* Tweaks */
-.gradient-green {
-  background: linear-gradient(90deg, 
-  hsl(160, 95%, 84%), 
-  hsl(190, 95%, 34%),
-  hsl(200, 95%, 34%),
-  hsl(190, 95%, 34%),
-  hsl(160, 95%, 94%)
-  ) 0% 0% / 200% 100% padding-box text;
+/* Gradients */
+.gradient {
   user-select: none;
-  -webkit-text-fill-color: transparent;
-}
-.gradient-white {
-  background: linear-gradient(45deg, 
-  hsl(160, 95%, 90%), 
-  hsl(180, 95%, 85%),
-  hsl(160, 95%, 100%)
+  background: linear-gradient(90deg,
+  var(--hue-sole),
+  var(--hue-teal),
+  var(--hue-jcce),
+  var(--hue-sole),
+  var(--hue-jcce)
   );
   background-size: 300%;
   -webkit-background-clip: text;
@@ -88,9 +83,22 @@ a:active {
   background-clip: text;
   color: transparent;
   animation: gradient 5s infinite;
-  -webkit-text-fill-color: transparent;
+  text-align: center;
 }
-.gradient-blue {
+.gradient-blanc {
+  background: linear-gradient(45deg,
+  var(--hue-blan),
+  var(--hue-teal),
+  var(--hue-blan)
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: gradient 5s infinite;
+}
+.gradient-bleu {
   background: linear-gradient(90deg, 
   hsl(170, 95%, 84%), 
   hsl(180, 95%, 34%),
@@ -103,41 +111,9 @@ a:active {
   color: transparent;
   animation: gradient 10s infinite;
 }
-.gradient-roll {
-  user-select: none;
-  background: linear-gradient(90deg, 
-  hsl(160, 95%, 34%), 
-  hsl(190, 95%, 34%),
-  hsl(200, 95%, 34%),
-  hsl(190, 95%, 34%),
-  hsl(160, 95%, 34%)
-  ) 0% 0% / 200% 100% padding-box text;
-  opacity: 1;
-  -webkit-text-fill-color: transparent;
-  animation: 5s infinite rainbow;
-  text-align: center;
-}
 
-.gradient {
-  user-select: none;
-  background: linear-gradient(90deg, 
-  hsl(160, 95%, 34%), 
-  hsl(190, 95%, 34%),
-  hsl(200, 95%, 34%),
-  hsl(190, 95%, 34%),
-  hsl(160, 95%, 34%)
-  );
-  background-size: 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  animation: gradient 5s infinite;
-  text-align: center;
-}
-
-.abril {
-  font-family: 'Abril Fatface', serif;
+::-webkit-scrollbar {
+    display: none;
 }
 
 /* Media Breakpoint*/
@@ -147,15 +123,11 @@ a:active {
   }
 }
 
-/* Keyframes */
-
-
-
 /* Animations */
 .spin {
     box-sizing: border-box;
-    border-color: var(--spinner);
-    border-right-color: var(--spinner-color);
+    border-color: var(--hue-jaun);
+    border-right-color: var(--hue-plum);
     animation: spin 5.65s linear infinite;
 }
 
@@ -172,7 +144,7 @@ a:active {
 
 @keyframes rainbow {
   0% {
-    background-position: 0% center;
+    background-position: 0 center;
   }
   100% {
     background-position: 200% center;
@@ -181,12 +153,13 @@ a:active {
 
 @keyframes gradient {
   0% {
-    background-position: 0% 50%;
+    background-position: 0 50%;
   }
   50% {
     background-position: 100% 50%;
   }
   100% {
-    background-position: 0% 50%;
+    background-position: 0 50%;
   }
 }
+

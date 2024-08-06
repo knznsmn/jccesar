@@ -14,10 +14,10 @@ const Nav = () => {
             alt="knznsmn home"
           />
         </Link>
-        <ul className='menu gradient-white'>
+        <ul className='menu'>
           {/* <li><Link href="/projects">Projects</Link></li>
-          <li><Link href="/blog">Blog</Link></li> */}
-          <li className='gradient-roll'><Link href="/about">About Me</Link></li>
+          <li><Link href="/blog">Blog</Link></li>  */}
+          <li className='gradient-bleu'><Link href="/about">About Me</Link></li>
         </ul>
       </nav>
     </header>

@@ -1,7 +1,9 @@
 ul.services {
-  margin: auto 1rem;
-  margin-bottom: .5rem;
+  margin: 1rem;
   display: flex;
+  text-transform: uppercase;
+  font-size: small;
+  user-select: none;
 }
 
 .services li a:link {
@@ -14,7 +16,7 @@ ul.services {
 
 .services li a:visited {
   text-decoration: none;
-  color: var(--blue);
+  color: var(--hue-bleu);
 }
 
 .services li a:hover {
@@ -26,10 +28,4 @@ ul.services {
 
 .services li a:active {
   text-decoration: none;
-}
-@media (width > 660px) {
-  ul.services {
-    display: flex;
-    margin-bottom: auto;
-  }
 }

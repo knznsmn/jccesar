@@ -1,0 +1,61 @@
+p.pitch {
+  width: 50%;
+  margin: 5rem 3rem;
+  text-align: right;
+  /*border-right: .02rem solid var(--hue-jaun);*/
+}
+.introduction {
+  font-family: var(--font-serf), serif;
+  font-size: 3rem;
+}
+.name {
+  border-left: var(--hue-jaun) solid .5rem;
+  padding-left: 1rem;
+  /* margin-left: -1.5rem; */
+}
+
+.pitch span:nth-child(4),
+.pitch span:nth-child(5),
+.pitch span:nth-child(6)
+{
+  font-family: var(--font-mono), serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: .9;
+}
+.pitch span:nth-child(1) { /* and */
+  font-family: var(--font-serf), serif;
+  font-size: 2rem;
+  color: var(--hue-plum);
+  text-transform: uppercase;
+
+}
+.pitch span:nth-child(2) { /* individuals */
+  font-size: medium;
+  color: var(--hue-teal);
+}
+
+.pitch span:nth-child(3) { /* businesses */
+  font-size: medium;
+  color: var(--hue-jcce);
+
+}
+.pitch span:nth-child(4) { /* designing */
+  color: var(--hue-vert);
+  opacity: .6;
+}
+.pitch span:nth-child(5) { /* developing */
+  color: var(--hue-jaun);
+}
+.pitch span:nth-child(6) { /* deploying */
+  color: var(--hue-plum);
+  opacity: .8;
+}
+.pitch span:nth-child(7) { /* websites */
+  font-family: var(--font-serf), serif;
+  font-size: medium;
+  text-transform: none;
+  font-weight: 800;
+  color: var(--hue-bleu);
+  opacity: 1;
+}

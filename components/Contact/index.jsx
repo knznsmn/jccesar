@@ -1,29 +1,27 @@
 'use client'
-import Image from 'next/image'
-import copy from '@public/icons/copy.svg'
-import clip from '@public/icons/clipboard.svg'
+import {useState} from "react";
 import './styles.css'
 
 const Contact = () => {
 
-    let icon = copy;
-    const handleCopyEmail = () => {
+    const [text, setText] = useState('Copy my email address');
 
-        const email = 'mail@jccesar.com';
+    const handleClick = () => {
+
+      const email = 'mail@jccesar.com';
+      navigator.clipboard.writeText(email).then(() => {
         
-        navigator.clipboard.writeText(email).then(() => {
-        icon = clip;
-        }).catch(err => {
-        console.error('Failed to copy email: ', err);
-        });
-    };
+        setText('Copied to clipboard!');
+      }).catch(err => {
+      console.error('Failed to copy email: ', err);
+      });
+      
+    }
 
   return (
     <div className="contact">
-        
-        <button className='email' onClick={handleCopyEmail}>
-            Copy My Email Address
-            <Image src={icon} alt="Click here to copy my email address"/>
+        <button className='email' onClick={handleClick}>
+            {text}
         </button>
     </div>
   )
