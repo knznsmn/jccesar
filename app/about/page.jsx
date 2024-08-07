@@ -13,6 +13,7 @@ export default function About() {
   
   return (
     <main className="main">
+		  <h1 className="heading gradient">About Me</h1>
       {/* <section className="about-left">
         <article className='about-heading'>
           <h1 className='gradient'>About</h1>

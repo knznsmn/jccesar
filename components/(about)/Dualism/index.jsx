@@ -6,21 +6,9 @@ const Dualism = () => {
       <article className="left">
         <h1>Left</h1>
         <p>Weye weye weye weye</p>
-        <p>dsfsdfsdfsdfsdfsd</p>
-        <p>dsfsdfsdfsdfsdfsd</p>
-        <p>dsfsdfsdfsdfsdfsd</p>
-        <p>dsfsdfsdfsdfsdfsd</p>
-        <p>dsfsdfsdfsdfsdfsd</p>
-        <p>dsfsdfsdfsdfsdfsd</p>
-        <p>dsfsdfsdfsdfsdfsd</p>
-        <p>dsfsdfsdfsdfsdfsd</p>
-        <p>dsfsdfsdfsdfsdfsd</p>
-        <p>dsfsdfsdfsdfsdfsd</p>
-        <p>dsfsdfsdfsdfsdfsd</p>
-        <p>dsfsdfsdfsdfsdfsd</p>
-        <p>dsfsdfsdfsdfsdfsd</p>
-        <p>dsfsdfsdfsdfsdfsd</p>
+        <p>dsfsdfs dfsdf sdfsd gfjfjrj </p>
       </article>
+			
       <article className="right">
         <h1>Right</h1>
       </article>
