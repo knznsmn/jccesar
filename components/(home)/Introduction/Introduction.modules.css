@@ -1,9 +1,26 @@
-p.pitch {
-  width: 50%;
-  margin: 5rem 3rem;
-  text-align: right;
-  /*border-right: .02rem solid var(--hue-jaun);*/
+header.introduction {
+  /* margin-top: 2em; */
+  background: none;
 }
+
+section.introduction {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-left{
+  flex: 1.5;
+}
+.intro-right{
+  flex: .5;
+}
+
+p.pitch {
+  text-align: right;
+}
+
 .introduction {
   font-family: var(--font-serf), serif;
   font-size: 3rem;
@@ -58,4 +75,13 @@ p.pitch {
   font-weight: 800;
   color: var(--hue-bleu);
   opacity: 1;
+}
+
+@media (min-width: 660px) {
+  header.introduction {
+    margin-top: 2em;
+  }
+  p.pitch {
+    width: 70%;
+  }
 }

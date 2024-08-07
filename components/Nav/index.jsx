@@ -17,7 +17,7 @@ const Nav = () => {
         <ul className='menu'>
           {/* <li><Link href="/projects">Projects</Link></li>
           <li><Link href="/blog">Blog</Link></li>  */}
-          <li className='gradient-bleu'><Link href="/">About Me</Link></li>
+          <li className='gradient-bleu'><Link href="/about">About Me</Link></li>
         </ul>
       </nav>
     </header>

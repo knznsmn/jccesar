@@ -4,6 +4,7 @@ import './about.modules.css';
 import signature from '@public/hrafnkell/signature.svg';
 import moi from '@public/hrafnkell/me.svg';
 import knznsmn from '@public/hrafnkell/knznsmn.svg';
+import Dualism from '@components/(about)/Dualism';
 
 export const metadata = {
   title: 'About Me | Julius C. Cesar',
@@ -12,7 +13,7 @@ export default function About() {
   
   return (
     <main className="main">
-      <section className="about-left">
+      {/* <section className="about-left">
         <article className='about-heading'>
           <h1 className='gradient'>About</h1>
           <h3>Hi there!</h3>
@@ -32,7 +33,8 @@ export default function About() {
         <article className="knznsmn-pose">
           <Image src={moi} alt="Knznsmn with his fuel." />
         </article>
-      </section>
+      </section> */}
+      <Dualism />
     </main>
   );
 }
