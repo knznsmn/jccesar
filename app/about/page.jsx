@@ -1,40 +1,35 @@
-
+import Moment from '@components/api/Moment';
+import Image from 'next/image';
+import me from '@public/hrafnkell/me.png';
 import './about.modules.css'
 
-export const metadata = {
-  title: 'About Me | Julius C. Cesar',
-};
-export default function About() {
-  const hours = new Date().getHours();
-  let moment;
+// export const metadata = {
+//   title: 'About Me | Julius C. Cesar',
+// };
+const About = () => {
 
-    if (hours >= 18) {
-        moment = "evening";
-    }
-    else if (hours >= 12) {
-        moment = "afternoon";
-    }
-    else if (hours < 12) {
-        moment = "morning";
-    }
-    else {
-        moment = "day";
-    }
-
-  console.log(hours);
-  return (
+ return (
       <main className="main">
-          <h1 className='gradient-bleu' >About Me</h1>
-          
-          <section>
-            <h2>Hi there! Good {moment}.</h2>
-            <p>You've found me!</p>
-          </section>
-          <section className="volunteer">
-              <p>
-                  I’m on a mission to gain hands-on experience and give back to the community through volunteering. If you’re passionate about creating positive change and have a volunteer opportunity that needs enthusiastic support, I’m all ears! Let’s connect and make a meaningful impact together.
-              </p>
-          </section>
+        <section className="about-left">
+          <article>
+            <h1 className='gradient-bleu' >About</h1>
+            <h3>Hi there!</h3>
+            {/* <p>Good <Moment />. I'm Julius Cinco Cesar. I love coffee and coffee jokes.</p> */}
+          </article>
+
+          <article>
+            <h2>I Volunteer!</h2>
+            <p>I’m on a mission to gain hands-on experience and give back to the community through volunteering. If you’re passionate about creating positive change and have a volunteer opportunity that needs enthusiastic support, I’m all ears! Let’s connect and make a meaningful impact together.</p>
+          </article>
+        </section>
+
+        <section className="about-right">
+          <article>
+            <Image src={me} alt='knznsmn with refueling with a glass of coffee' />
+          </article>
+        </section>
       </main>
   );
 }
+
+export default About

@@ -1,4 +1,4 @@
-import './styles.css'
+import './Pulse.modules.css'
 
 const Pulse = () => {
   return (
