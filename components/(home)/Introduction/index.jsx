@@ -1,5 +1,5 @@
 import Contact from '@components/Contact'
-import './introduction.modules.css'
+import './Introduction.modules.css'
 
 const Introduction = () => {
   

@@ -15,6 +15,10 @@
   --font-serf: 'Abril Fatface';
   --font-sans: 'Inter';
   --font-mono: 'Courier New';
+
+  --h1-size: 3rem;
+  --h2-size: 2rem;
+  --h3-size: 1.2rem;
 }
 
 /* Vendor Default Resets */
@@ -35,7 +39,7 @@ body {
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
   color: var(--hue-blan);
-  font-size: 18px;
+  font-size: 16px;
 }
 header, main, footer {
   max-width: 1200px;

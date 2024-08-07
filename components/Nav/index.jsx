@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import logo from '@public/knznsmn.svg'
 import Link from 'next/link'
-import './styles.css'
+import './Nav.modules.css'
 
 const Nav = () => {
  
@@ -17,7 +17,7 @@ const Nav = () => {
         <ul className='menu'>
           {/* <li><Link href="/projects">Projects</Link></li>
           <li><Link href="/blog">Blog</Link></li>  */}
-          <li className='gradient-bleu'><Link href="/about">About Me</Link></li>
+          <li className='gradient-bleu'><Link href="/">About Me</Link></li>
         </ul>
       </nav>
     </header>

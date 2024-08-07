@@ -1,9 +1,9 @@
 
 import Slide from '@components/Slide'
 import Contact from '@components/Contact'
-import './styles.css'
 import Image from 'next/image'
 import knznsmn from '@public/knznsmn.jpg'
+import './Hero.modules.css'
 
 const Hero = () => {
   return (

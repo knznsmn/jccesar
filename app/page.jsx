@@ -1,6 +1,6 @@
 
 import Hero from '@components/Hero'
-import './styles.css'
+import './page.modules.css'
 import Introduction from '@components/(home)/Introduction';
 
 export const metadata = {

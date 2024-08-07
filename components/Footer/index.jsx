@@ -1,6 +1,7 @@
 import Services from '@components/(home)/Services';
 import Social from '@components/Social';
-import './styles.css';
+import './Footer.modules.css';
+
 const Footer = () => {
 
     const year = new Date().getFullYear();

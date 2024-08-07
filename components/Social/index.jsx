@@ -4,7 +4,7 @@ import Link from 'next/link'
 import instagram from '@public/social/instagram.svg'
 import linkedin from '@public/social/linkedin.svg'
 import github from '@public/social/github.svg'
-import './social.modules.css'
+import './Social.modules.css'
 
 const Social = () => {
   const href = {

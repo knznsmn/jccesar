@@ -1,4 +1,4 @@
-import './styles.css'
+import './Works.styles.css'
 
 const Works = () => {
   return (

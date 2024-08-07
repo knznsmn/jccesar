@@ -1,5 +1,4 @@
 
-import './styles.css';
 import Image from 'next/image'
 import photoshop from '@public/skills/photoshop.svg'
 import illustrator from '@public/skills/illustrator.svg'
@@ -10,6 +9,7 @@ import javascript from '@public/skills/javascript.svg'
 import debian from '@public/skills/debian.svg'
 import apache from '@public/skills/apache.svg'
 import nginx from '@public/skills/nginx.svg'
+import './Slide.modules.css';
 
 const Slide = () => {
   return (
