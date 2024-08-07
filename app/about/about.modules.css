@@ -1,4 +1,8 @@
 .main {
+<<<<<<< HEAD
+=======
+    margin: 1rem;
+>>>>>>> aa58a3fa29b159c7c825a32c35eb7ae3d1225526
     display: flex;
     flex-direction: column;
     flex: 1;
