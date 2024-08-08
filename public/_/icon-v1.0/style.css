@@ -1,0 +1,140 @@
+@font-face {
+  font-family: 'icon';
+  src:  url('fonts/icon.eot?m0ebsj');
+  src:  url('fonts/icon.eot?m0ebsj#iefix') format('embedded-opentype'),
+    url('fonts/icon.ttf?m0ebsj') format('truetype'),
+    url('fonts/icon.woff?m0ebsj') format('woff'),
+    url('fonts/icon.svg?m0ebsj#icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-linux:before {
+  content: "\e900";
+}
+.icon-knznsmn .path1:before {
+  content: "\e901";
+  color: rgb(3, 171, 169);
+  opacity: 0.988;
+}
+.icon-knznsmn .path2:before {
+  content: "\e902";
+  margin-left: -1em;
+  color: rgb(3, 171, 169);
+  opacity: 0.988;
+}
+.icon-knznsmn .path3:before {
+  content: "\e903";
+  margin-left: -1em;
+  color: rgb(4, 161, 159);
+  opacity: 0.452;
+}
+.icon-knznsmn .path4:before {
+  content: "\e904";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.999;
+}
+.icon-twitter:before {
+  content: "\e905";
+}
+.icon-nginx:before {
+  content: "\e906";
+}
+.icon-apache:before {
+  content: "\e907";
+}
+.icon-adobepremiere:before {
+  content: "\e908";
+}
+.icon-adobeillustrator:before {
+  content: "\e909";
+}
+.icon-adobephotoshop:before {
+  content: "\e90a";
+}
+.icon-javascript:before {
+  content: "\e90b";
+}
+.icon-arrow:before {
+  content: "\e90c";
+}
+.icon-home:before {
+  content: "\e90d";
+}
+.icon-copy:before {
+  content: "\e92c";
+}
+.icon-price-tag:before {
+  content: "\e935";
+}
+.icon-location:before {
+  content: "\e948";
+}
+.icon-mobile:before {
+  content: "\e958";
+}
+.icon-spinner:before {
+  content: "\e97a";
+}
+.icon-clipboard:before {
+  content: "\e9b8";
+}
+.icon-sun:before {
+  content: "\e9d4";
+}
+.icon-contrast:before {
+  content: "\e9d5";
+}
+.icon-embed:before {
+  content: "\ea7f";
+}
+.icon-embed2:before {
+  content: "\ea80";
+}
+.icon-terminal:before {
+  content: "\ea81";
+}
+.icon-mail:before {
+  content: "\ea84";
+}
+.icon-facebook:before {
+  content: "\ea91";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-whatsapp:before {
+  content: "\ea93";
+}
+.icon-github:before {
+  content: "\eab0";
+}
+.icon-linkedin:before {
+  content: "\eac9";
+}
+.icon-html:before {
+  content: "\eae4";
+}
+.icon-css:before {
+  content: "\eae6";
+}
+.icon-git:before {
+  content: "\eae7";
+}
