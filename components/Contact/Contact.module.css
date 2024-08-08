@@ -1,11 +1,12 @@
 .contact {
-  margin: 2rem;
+  margin: 1em auto;
   display: flex;
   justify-content: center;
 }
 
 .email {
   font-family: var(--font-sans), sans-serif;
+  font-size: small;
   padding: 1.2em;
   border: none;
   outline: none;
@@ -29,15 +30,6 @@
   hsl(200, 95%, 34%),
   hsl(190, 95%, 34%),
   hsl(160, 95%, 34%)
-  /*#ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000 */
   );
   position: absolute;
   top: -2px;
@@ -48,21 +40,9 @@
   -webkit-filter: blur(5px);
   width: calc(100% + 4px);
   height: calc(100% + 4px);
-  animation: email-glow 20s linear infinite;
+  animation: glow 20s linear infinite;
   transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
-}
-
-@keyframes email-glow {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
+  border-radius: 1em;
 }
 
 .email:after {
@@ -77,6 +57,14 @@
   border-radius: 10px;
 }
 
-.email img {
-  width: 1rem;
+@keyframes glow {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }

@@ -12,6 +12,9 @@
   align-items: center;
   font-family: var(--font-serf), serif;
 }
+.introduction section {
+  margin: 2rem 0;
+}
 .introduction h1 {
   margin-bottom: 10em;
   font-size: 5em;
@@ -23,8 +26,11 @@
 .right{
   flex: .5;
 }
-
-.pitch {
+.right img {
+  width: 3rem;
+}
+p.pitch {
+  padding-left: 2em;
   text-align: right;
 }
 .name {
@@ -77,6 +83,9 @@
   font-weight: 800;
   color: var(--hue-bleu);
   opacity: 1;
+}
+.cta {
+  margin: 3em;
 }
 .cta p {
   text-align: center;

@@ -1,0 +1,56 @@
+ul.services {
+  margin: .5em 2em;
+  display: flex;
+  text-transform: uppercase;
+  font-size: small;
+  user-select: none;
+  background-color: var(--hue-bleu);
+  color: var(--blue);
+  background: linear-gradient(90deg, 
+  hsl(160, 95%, 34%), 
+  hsl(190, 95%, 34%),
+  hsl(200, 95%, 34%),
+  hsl(190, 95%, 34%),
+  hsl(160, 95%, 34%)
+  ) 0% 0% / 200% 100% padding-box text;
+  opacity: 1;
+  -webkit-text-fill-color: transparent;
+  animation: 5s infinite rainbow;
+}
+.services li {
+  list-style: none;
+  margin-right: 1em;
+}
+
+.services li a:link {
+  font-size: small;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  transition: all .2s ease-in-out;
+}
+
+.services li a:visited {
+  text-decoration: none;
+  color: var(--hue-bleu);
+}
+
+.services li a:hover {
+  text-decoration: none;
+  border-top: .25rem solid orange;
+  color: teal;
+  scale: .8;
+}
+
+.services li a:active {
+  text-decoration: none;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0 center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}

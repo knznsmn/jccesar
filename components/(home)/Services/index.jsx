@@ -1,11 +1,11 @@
-import './Services.modules.css'
+import styles from './Services.module.css'
 
 const Services = () => {
   return (
-    <ul className='services gradient-bleu'>
-      <li>Design.</li>
-      <li>Develop.</li>
-      <li>Deploy.</li>
+    <ul className={styles.services}>
+      <li><a href="/services/design">Design.</a></li>
+      <li><a href="/services/develop">Develop.</a></li>
+      <li><a href="/services/deploy">Deploy.</a></li>
     </ul>
   )
 }

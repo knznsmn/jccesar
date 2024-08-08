@@ -1,27 +1,28 @@
-header {
+.header {
   background-color: hsla(179, 80%, 90%, .05);
   backdrop-filter: blur(1rem);
 }
-nav {
+.nav {
   display: flex;
   justify-content: space-between;
-  margin: .5rem 1rem;
+  align-items: center;
+  margin: 0 1rem;
 }
-img {
-    margin: 0 0.5rem;
+.img {
     width: 2rem;
     height: auto;
 }
-ul.menu {
+.menu {
   display: flex;
 }
-ul li {
+.menu ul li {
     margin: 0.5rem;
     list-style: none;
 }
+/*
 [aria-current='page'] {
   background-color: var(--hue-bleu);
-  /* color: var(--blue);
+  color: var(--blue);
   background: linear-gradient(90deg, 
   hsl(160, 95%, 34%), 
   hsl(190, 95%, 34%),
@@ -31,6 +32,7 @@ ul li {
   ) 0% 0% / 200% 100% padding-box text;
   opacity: 1;
   -webkit-text-fill-color: transparent;
-  animation: 5s infinite rainbow; */
+  animation: 5s infinite rainbow;
 }
+*/
 

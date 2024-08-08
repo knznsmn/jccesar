@@ -1,5 +1,7 @@
-footer {
+.footer {
+    margin-top: 2em;
     display: flex;
+    flex-direction: row;
     background: transparent;
     justify-content: space-between;
     align-items: center;

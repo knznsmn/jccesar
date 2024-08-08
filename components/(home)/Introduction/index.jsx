@@ -13,10 +13,10 @@ const Introduction = () => {
       <article className={styles.introduction}>
         <section className={styles.left}>
         <p className={styles.pitch}><span>I</span> assist <span>individuals</span> and <span>businesses</span> in <span>designing</span>, <span>developing</span>, and <span>deploying</span> their <span>websites</span>.</p>
-      </section>
-      <section className={styles.right}>
+        </section>
+        <section className={styles.right}>
           <img src={right.src} alt="Right arrow" />
-      </section>
+        </section>
       </article>
       
       <article className={styles.cta}>

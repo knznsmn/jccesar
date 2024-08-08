@@ -4,7 +4,7 @@ import Link from 'next/link'
 import instagram from '@public/social/instagram.svg'
 import linkedin from '@public/social/linkedin.svg'
 import github from '@public/social/github.svg'
-import './Social.modules.css'
+import styles from './Social.module.css'
 
 const Social = () => {
   const href = {
@@ -15,7 +15,7 @@ const Social = () => {
     twitte: 'https://www.x.com/knznsmn',
   }
   return (
-    <div className='social'>
+    <div className={styles.social}>
       <Link href={href.github}><Image src={github} alt='Github' /></Link>
       <Link href={href.linked}><Image src={linkedin} alt='LinkedIn' /></Link>
       <Link href={href.instag}><Image src={instagram} alt='Instagram' /></Link>

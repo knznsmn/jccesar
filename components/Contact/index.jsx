@@ -1,6 +1,6 @@
 'use client'
 import {useState} from "react";
-import './Contact.modules.css'
+import styles from './Contact.module.css'
 
 const Contact = () => {
 
@@ -19,8 +19,8 @@ const Contact = () => {
     }
 
   return (
-    <div className="contact">
-        <button className='email' onClick={handleClick}>
+    <div className={styles.contact}>
+        <button className={styles.email} onClick={handleClick}>
             {text}
         </button>
     </div>
