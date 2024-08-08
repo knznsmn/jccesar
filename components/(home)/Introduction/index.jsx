@@ -20,7 +20,8 @@ const Introduction = () => {
       </article>
       
       <article className={styles.cta}>
-        <p>Let’s chat! I'm only one mail away—I’d love to hear from you!</p>
+        <p>Let’s chat! I'm only one mail away<br />
+        &mdash; I’d love to hear from you!</p>
         <Contact />
       </article>
     </section>

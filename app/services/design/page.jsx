@@ -1,13 +1,19 @@
-import './design.modules.css'
+import Card from '@components/ui/Card'
+import './design.module.css'
 
-const Develop = () => {
+const Design = () => {
   return (
     <main>
-      <section>
-        Transforming designs into functional, high-performing websites is my specialty. Utilizing the latest technologies and best practices, I build responsive and user-friendly websites that provide an exceptional user experience across all devices.
-      </section>
+      <Card heading='h2'
+            title='Design.'
+            paragraph='Transforming designs into functional, high-performing    websites.'
+      />
+      <Card heading='h3'
+            title='Graphic & Responsive Design'
+            paragraph='Utilising the latest technologies and best practices to bring your designs to life, creating responsive websites that look great on all devices.'
+      />
     </main>
   )
 }
 
-export default Develop
+export default Design

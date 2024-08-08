@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Moment from '@components/api/Moment';
 import signature from '@public/hrafnkell/signature.svg';
-import moi from '@public/hrafnkell/me.svg';
+import moi from '@public/hrafnkell/moi.svg';
 import knznsmn from '@public/hrafnkell/knznsmn.svg';
 import Dualism from '@components/(about)/Dualism';
 import Heading from '@components/ui/Heading';
@@ -16,7 +16,7 @@ export default function About() {
     <main>
       <section className={styles.container}>
         <article>
-          <Heading title='About' />
+          <Heading title='About Us' />
         </article>
 
         <article className={styles.left}>

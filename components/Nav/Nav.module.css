@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 1rem;
+  margin: 0.5em 1em;
 }
 .img {
     width: 2rem;
