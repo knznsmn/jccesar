@@ -1,6 +1,6 @@
 
 import Hero from '@components/Hero'
-import './page.modules.css'
+import styles from './page.module.css'
 import Introduction from '@components/(home)/Introduction';
 
 export const metadata = {
@@ -9,7 +9,7 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <main className="main">
+      <main>
         <Introduction />
       </main>
     </>

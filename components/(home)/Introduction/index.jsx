@@ -1,28 +1,29 @@
 import Contact from '@components/Contact'
-import './Introduction.modules.css'
 import right from '@public/icons/angle-right.svg'
+import styles from './Introduction.module.css'
 
 const Introduction = () => {
   
   return (
-    <>
-      <header className="introduction">
-        <h1 className='gradient'>Hi! I'm <span className="name gradient-blanc">Julius</span>.</h1>
-      </header>
+    <section className={styles.container}>
+      <article>
+        <h1>Hi! I'm <span className={styles.name}>Julius</span>.</h1>
+      </article>
 
-      <section className='introduction'>
-        <article className='intro-left'>
-          <p className='pitch'><span>I</span> assist <span>individuals</span> and <span>businesses</span> in <span>designing</span>, <span>developing</span>, and <span>deploying</span> their <span>websites</span>.</p>
-          </article>
-          <article className='intro-right'>
-            <img src={right.src} alt="Right arrow" />
-        </article>
+      <article className={styles.introduction}>
+        <section className={styles.left}>
+        <p className={styles.pitch}><span>I</span> assist <span>individuals</span> and <span>businesses</span> in <span>designing</span>, <span>developing</span>, and <span>deploying</span> their <span>websites</span>.</p>
       </section>
+      <section className={styles.right}>
+          <img src={right.src} alt="Right arrow" />
+      </section>
+      </article>
       
-      <section className="cta">
+      <article className={styles.cta}>
+        <p>Let’s chat! I'm only one mail away—I’d love to hear from you!</p>
         <Contact />
-      </section>
-    </>
+      </article>
+    </section>
   )
 }
 

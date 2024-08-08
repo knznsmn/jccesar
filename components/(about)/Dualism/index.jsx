@@ -1,16 +1,17 @@
-import './Dualism.modules.css'
+import styles from './Dualism.module.css'
 
-const Dualism = () => {
+
+const Dualism = ({h2, p, svg, alt}) => {
   return (
-    <section className='dualism'>
+    <section className={styles.container}>
       <article className="left">
-        <h1>Left</h1>
-        <p>Weye weye weye weye</p>
-        <p>dsfsdfs dfsdf sdfsd gfjfjrj </p>
+        <h2>{h2 ? h2 : 'A section heading here'}</h2>
+        <p>{p ? p : 'A paragraph is supposed to be rendered here but the motherfucker have forgotten.'}
+        </p>
       </article>
 			
       <article className="right">
-        <h1>Right</h1>
+        <Image src={svg} alt={alt} />
       </article>
     </section>
   )

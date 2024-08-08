@@ -1,29 +1,31 @@
-header.introduction {
-  /* margin-top: 2em; */
-  background: none;
-}
-
-section.introduction {
+.container {
+  margin: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.intro-left{
+.introduction {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: var(--font-serf), serif;
+}
+.introduction h1 {
+  margin-bottom: 10em;
+  font-size: 5em;
+}
+
+.left{
   flex: 1.5;
 }
-.intro-right{
+.right{
   flex: .5;
 }
 
-p.pitch {
+.pitch {
   text-align: right;
-}
-
-.introduction {
-  font-family: var(--font-serf), serif;
-  font-size: 3rem;
 }
 .name {
   border-left: var(--hue-jaun) solid .5rem;
@@ -40,9 +42,9 @@ p.pitch {
   text-transform: uppercase;
   opacity: .9;
 }
-.pitch span:nth-child(1) { /* and */
+.pitch span:nth-child(1) { /* I */
   font-family: var(--font-serf), serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--hue-plum);
   text-transform: uppercase;
 
@@ -75,6 +77,9 @@ p.pitch {
   font-weight: 800;
   color: var(--hue-bleu);
   opacity: 1;
+}
+.cta p {
+  text-align: center;
 }
 
 @media (min-width: 660px) {

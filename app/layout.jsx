@@ -20,9 +20,11 @@ function Layout({children}) {
     <html lang="en">
       <body>
         <Pulse />
-        <Nav />
-        {children}
-        <Footer />
+        <div className="container">
+          <Nav />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   )

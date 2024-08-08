@@ -1,10 +1,10 @@
-import './Pulse.modules.css'
+import styles from './Pulse.module.css'
 
 const Pulse = () => {
   return (
-    <div className='bg'>
-      <div className="one"></div>
-      <div className="two"></div>
+    <div className={styles.bg}>
+      <div className={styles.one}></div>
+      <div className={styles.two}></div>
     </div>
   )
 }
