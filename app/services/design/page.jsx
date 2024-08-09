@@ -2,6 +2,10 @@ import Card from '@components/ui/Card'
 import styles from './design.module.css'
 import Heading from '@components/ui/Heading'
 
+export const metadata = {
+  title: 'Design | Services',
+};
+
 const Design = () => {
   return (
     <main>
@@ -13,9 +17,9 @@ const Design = () => {
         <article>
           <Card heading='h2'
             title='Design.'
-            paragraph='Transforming designs into functional, high-performing    websites.'
+            paragraph='Transforming designs into functional, high-performing websites.'
           />
-          <Card heading='h3'Establish Your Online Presen
+          <Card heading='h3'
             title='Graphic & Responsive Design'
             paragraph='Utilising the latest technologies and best practices to bring your designs to life, creating responsive websites that look great on all devices.'
           />

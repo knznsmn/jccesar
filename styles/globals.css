@@ -68,7 +68,8 @@ a:link {
   font-size: small;
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--hue-bleu)
+  color: var(--hue-bleu);
+  
 }
 a:visited {
   text-decoration: none;

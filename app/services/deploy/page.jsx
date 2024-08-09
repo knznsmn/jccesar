@@ -2,6 +2,10 @@ import Heading from '@components/ui/Heading'
 import Card from '@components/ui/Card'
 import styles from './deploy.module.css'
 
+export const metadata = {
+  title: 'Deploy | Services',
+};
+
 const Deploy = () => {
   return (
     <main>

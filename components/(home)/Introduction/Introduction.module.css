@@ -98,6 +98,12 @@ p.pitch {
   header.introduction {
     margin-top: 2em;
   }
+  .name {
+    border-left: none;
+    border-bottom: var(--hue-jaun) solid .5rem;
+    padding-left: 0;
+  /* margin-left: -1.5rem; */
+}
   p.pitch {
     width: 70%;
   }

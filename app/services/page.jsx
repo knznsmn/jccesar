@@ -2,6 +2,10 @@ import Heading from '@components/ui/Heading'
 import styles from './services.module.css'
 import Card from '@components/ui/Card'
 
+export const metadata = {
+  title: 'Services | Julius C. Cesar',
+};
+
 const Services = () => {
   return (
     <main>
