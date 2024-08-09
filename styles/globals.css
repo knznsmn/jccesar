@@ -50,7 +50,7 @@ font-size: 16px;
 body {
   font-family: 'Inter', sans-serif;
   color: var(--hue-blan);
-  font-size: 16px;
+
 }
 header, main, footer {
   max-width: 1200px;
@@ -89,6 +89,10 @@ h1 {
   text-align: center;
   line-height: calc(var(--h1-size) * 1.2);
   letter-spacing: -20%;
+}
+p {
+  font-family: 'Inter', sans-serif;
+  padding-top: 1rem;
 }
 
 /* Gradients */
