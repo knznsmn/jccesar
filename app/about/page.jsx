@@ -16,7 +16,7 @@ export default function About() {
     <main>
       <section className={styles.container}>
         <article>
-          <Heading title='About Us' />
+          <Heading title='About Me' />
         </article>
 
         <article className={styles.left}>

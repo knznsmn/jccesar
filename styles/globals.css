@@ -12,6 +12,7 @@
   --hue-plum: hsla(11, 89%, 53%, 1);
 
 /* Fonts */
+font-size: 16px;
   --font-serf: 'Abril Fatface';
   --font-sans: 'Inter';
   --font-mono: 'Courier New';
@@ -79,8 +80,15 @@ a:hover {
 a:active {
   text-decoration: none;
 }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Abril Fatface', serif;
+  text-transform: uppercase;
+}
 h1 {
+  margin: 2em;
   text-align: center;
+  line-height: calc(var(--h1-size) * 1.2);
+  letter-spacing: -20%;
 }
 
 /* Gradients */

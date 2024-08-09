@@ -1,18 +1,26 @@
-import './services.modules.css'
+import Heading from '@components/ui/Heading'
+import styles from './services.module.css'
+import Card from '@components/ui/Card'
 
 const Services = () => {
   return (
     <main>
-      <section className='main'>
-      <h1 className='gradient-bleu'>Complete Web Solutions</h1>
-      <h2>provide end-to-end web services to bring your vision to life.</h2>
-      <p>I provide ongoing support and maintenance to ensure your website runs smoothly. Committed to your success, I'm always available for updates, improvements, and technical assistance.</p>
-      <p>Allow me to manage your website needs from inception to deployment, enabling you to concentrate on your core priorities.</p>
-    </section>
-    <section>
-      <article>
-        <h3>Secure hosting and smooth launch.</h3>
-      </article>
+      <section>
+        <article>
+          <Heading title='Services' />
+        </article>
+
+        <article>
+          <Card heading='h2'
+                title='End-to-End Web Services'
+                paragraph='ongoing support and maintenance to ensure your website runs smoothly. Committed to your success, I&apos;m always available for updates, improvements, and technical assistance.'
+          />
+
+          <Card heading='h3'
+                title='Secure Hosting and Smooth Launch'
+                paragraph='Utilise industry-standard Linux-based web solutions to host your website for stability, security, and optimum uptime.'
+          />
+        </article>
     </section>
     </main>
   )
