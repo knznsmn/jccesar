@@ -2,8 +2,6 @@ import Image from 'next/image';
 import Moment from '@components/api/Moment';
 import signature from '@public/hrafnkell/signature.svg';
 import moi from '@public/hrafnkell/moi.svg';
-import knznsmn from '@public/hrafnkell/knznsmn.svg';
-import Dualism from '@components/(about)/Dualism';
 import Heading from '@components/ui/Heading';
 import styles from './about.module.css';
 

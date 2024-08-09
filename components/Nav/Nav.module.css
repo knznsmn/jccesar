@@ -8,6 +8,10 @@
   align-items: center;
   margin: 0.5em 1em;
 }
+.nav a {
+  text-decoration: none;
+  color: var(--blue);
+}
 .img {
     width: 2rem;
     height: auto;

@@ -1,6 +1,7 @@
 import Contact from '@components/Contact'
 import right from '@public/icons/angle-right.svg'
 import styles from './Introduction.module.css'
+import Link from 'next/link'
 
 const Introduction = () => {
   
@@ -15,7 +16,7 @@ const Introduction = () => {
         <p className={styles.pitch}><span>I</span> assist <span>individuals</span> and <span>businesses</span> in <span>designing</span>, <span>developing</span>, and <span>deploying</span> their <span>websites</span>.</p>
         </section>
         <section className={styles.right}>
-          <img src={right.src} alt="Right arrow" />
+          <Link href='/services'><img src={right.src} alt="Right arrow" /></Link>
         </section>
       </article>
       
