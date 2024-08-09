@@ -37,7 +37,7 @@ p.pitch {
   text-align: right;
 }
 .name {
-  border-left: var(--hue-jaun) solid .5rem;
+  border-left: var(--hue-jaun) solid .1rem;
   padding-left: 1rem;
   /* margin-left: -1.5rem; */
 }
@@ -100,7 +100,7 @@ p.pitch {
   }
   .name {
     border-left: none;
-    border-bottom: var(--hue-jaun) solid .5rem;
+    border-top: var(--hue-jaun) solid .1rem;
     padding-left: 0;
   /* margin-left: -1.5rem; */
 }
