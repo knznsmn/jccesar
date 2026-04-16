@@ -1,0 +1,99 @@
+{
+    "website": {
+            "name": "JCC",
+            "tagline": "Design. Build. Deploy.",
+            "description": "A minimalist portfolio for brand identity, graphic design, and art direction.",
+            "link": "https://www.jccesar.com/",
+            "metadata": {
+                "titleTemplate": "%s | JCC",
+                "defaultTitle": "JCC | Graphic Design Portfolio",
+                "defaultDescription": "Graphic design portfolio with identity, editorial, and art direction work.",
+                "defaultOgImage": "/portfolio/og-default.jpg",
+                "twitterCard": "summary_large_image"
+            },
+            "author": {
+                "name": "Julius Cinco Cesar",
+                "role": "graphic designer, web developer",
+                "email": "mail@jccesar.com",
+                "github": "https://github.com/knznsmn",
+                "linkedin": "https://www.linkedin.com/in/knznsmn/",
+                "twitter": "https://twitter.com/knznsmn",
+                "address": "Abu Dhabi, UAE"
+            }
+    },
+    "navigation": [
+        {
+            "name": "Home",
+            "link": "/",
+            "meta": "Crafting narratives through brand systems.",
+            "view": "/banners/home.jpg"
+        },
+        {
+            "name": "Portfolio",
+            "link": "/portfolio",
+            "meta": "Visual Outputs & Explorations.",
+            "view": "/banners/portfolio.jpg"
+        },
+        {
+            "name": "About",
+            "link": "/about",
+            "meta": "Behind the Visual.",
+            "view": "/banners/about.jpg"
+        }
+    ],
+    "projects": [
+        {
+            "title": "Saranghe Restaurant",
+            "description": "Brand identity for a Korean restaurant, including logo, color palette, and core visual system.",
+            "link": "/projects/saranghe",
+            "view": "/projects/saranghe/preview.jpg"
+        },
+        {
+            "title": "Procretaire World",
+            "description": "A personal Luanti world for experimenting with multimedia art, interaction, and self-hosted tools.",
+            "link": "/projects/procretaire",
+            "view": "/projects/procretaire/preview.jpg"
+        }
+    ],
+    "portfolio": [
+        {
+            "title": "Twin Building Engineering Design & Services",
+            "description": "A visual framework for precision engineering.",
+            "link": "/portfolio/twinbuilding",
+            "preview": "/portfolio/twinbuilding/preview.jpg",
+            "metadata": {
+                "title": "Twin Building Engineering Design & Services",
+                "description": "Case study on identity and visual system design for an engineering firm.",
+                "ogImage": "/portfolio/twinbuilding/preview.jpg"
+            }
+        },
+        {
+            "title": "FNÚA Fashion",
+            "description": "A comprehensive identity system for luxury fashion.",
+            "link": "/portfolio/fnua",
+            "preview": "/portfolio/fnua/preview.jpg",
+            "metadata": {
+                "title": "FNÚA Fashion",
+                "description": "Case study on fashion branding with sustainable direction and expressive typography.",
+                "ogImage": "/portfolio/fnua/preview.jpg"
+            }
+        }
+    ],
+    "skills": [
+        {
+            "title": "Design",
+            "description": "Design and multimedia production using Photoshop, Illustrator, and After Effects.",
+            "link": "/projects"
+        },
+        {
+            "title": "Development",
+            "description": "Web development with HTML, CSS, and JavaScript.",
+            "link": "/projects"
+        },
+        {
+            "title": "Deployment",
+            "description": "Secure deployment and maintenance on Linux servers via SSH and related tools.",
+            "link": "/projects"
+        }
+    ]
+}

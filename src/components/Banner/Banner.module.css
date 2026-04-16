@@ -1,0 +1,79 @@
+.banner {
+    width: min(var(--max-width), 92vw);
+    margin-inline: auto;
+    height: 75vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+}
+
+.bannerNoImage {
+    grid-template-columns: 1fr;
+}
+
+.textColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(1.2rem, 3vw, 2.5rem);
+    text-align: left;
+}
+
+.textColumnCentered {
+    align-items: center;
+    text-align: center;
+    max-width: min(860px, 100%);
+    margin-inline: auto;
+}
+
+.imageColumn {
+    position: relative;
+    overflow: hidden;
+}
+
+.image {
+    object-fit: cover;
+}
+
+.eyebrow {
+    margin-bottom: 0.55rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: clamp(2rem, 6vw, 4.3rem);
+    line-height: 1.02;
+    margin-bottom: 0.8rem;
+}
+
+.text {
+    max-width: 58ch;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.link {
+    margin-top: 1rem;
+    display: inline-block;
+    width: fit-content;
+    border: 1px solid currentcolor;
+    padding: 0.5rem 0.72rem;
+}
+
+@media (max-width: 660px) {
+    .banner {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(220px, 1fr);
+        height: 75vh;
+    }
+
+    .textColumn {
+        text-align: center;
+        align-items: center;
+    }
+
+    .imageColumn {
+        display: block;
+    }
+}

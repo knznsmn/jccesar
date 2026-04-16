@@ -1,66 +1,60 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
+import { Banner } from "@/components/Banner";
+import { Hero } from "@/components/Hero";
+import Link from "next/link";
+import contents from "@/data/contents.json";
 
 export default function Home() {
+  const bannerContent = {
+    eyebrow: contents.website.tagline,
+    title: contents.website.author.name,
+    text: contents.navigation[0]?.meta ?? contents.website.description,
+    ctaLabel: "View portfolio",
+    ctaHref: "/portfolio",
+  };
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
+    <div className="siteShell">
+      <Navigation />
+      <Banner content={bannerContent} />
+      <main className="pageContainer">
+        <Hero />
+
+        <section className="workSection" aria-labelledby="selected-work-title">
+          <div className="sectionHeader">
+            <h2 id="selected-work-title" className="sectionTitle">
+              Selected work
+            </h2>
+            <p className="sectionLead">Minimal forms. Strong art direction.</p>
+          </div>
+          <div className="workGrid">
+            {contents.portfolio.slice(0, 3).map((item, index) => (
+              <article
+                className="workCard"
+                key={item.title}
+                data-reveal
+                data-reveal-delay={index * 90}
+              >
+                <p className="workTag">Case Study</p>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <Link className="inlineLink" href={item.link}>
+                  Explore
+                </Link>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="statementBand" aria-label="Design statement">
           <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+            I build design systems where composition, negative space, and color carry
+            meaning before words do.
           </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        </section>
       </main>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,66 @@
+export type NavigationItem = {
+  name: string;
+  link: string;
+  meta: string;
+  view: string;
+};
+
+export type Project = {
+  title: string;
+  description: string;
+  link: string;
+  view: string;
+};
+
+export type PortfolioItem = {
+  title: string;
+  description: string;
+  link: string;
+  preview: string;
+  metadata: {
+    title: string;
+    description: string;
+    ogImage: string;
+  };
+};
+
+export type Skill = {
+  title: string;
+  description: string;
+  link: string;
+};
+
+export type AuthorInfo = {
+  name: string;
+  role: string;
+  email: string;
+  github: string;
+  linkedin: string;
+  twitter: string;
+  address: string;
+};
+
+export type WebsiteMetadata = {
+  titleTemplate: string;
+  defaultTitle: string;
+  defaultDescription: string;
+  defaultOgImage: string;
+  twitterCard: string;
+};
+
+export type Website = {
+  name: string;
+  tagline: string;
+  description: string;
+  link: string;
+  metadata: WebsiteMetadata;
+  author: AuthorInfo;
+};
+
+export type Contents = {
+  website: Website;
+  navigation: NavigationItem[];
+  projects: Project[];
+  portfolio: PortfolioItem[];
+  skills: Skill[];
+};
