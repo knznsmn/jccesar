@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import styles from "./Darkmode.module.css";
 
 type Theme = "light" | "dark";
 
@@ -33,17 +34,17 @@ export function DarkmodeToggle() {
   return (
     <button
       type="button"
-      className="themeToggle"
+      className={styles.themeToggle}
       onClick={onToggleTheme}
       aria-label="Toggle color theme"
       title="Toggle color theme"
     >
-      <span className="themeTogglePrompt">$</span>
+      <span className={styles.themeTogglePrompt}>$</span>
       <span>theme:</span>
-      <span className="themeToggleState" aria-live="polite">
-        <span className="themeStateAuto">auto</span>
-        <span className="themeStateLight">light</span>
-        <span className="themeStateDark">dark</span>
+      <span className={styles.themeToggleState} aria-live="polite">
+        <span className={styles.themeStateAuto}>auto</span>
+        <span className={styles.themeStateLight}>light</span>
+        <span className={styles.themeStateDark}>dark</span>
       </span>
     </button>
   );

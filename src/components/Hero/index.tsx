@@ -1,34 +1,35 @@
 import Link from "next/link";
+import styles from "./Hero.module.css";
 
 export function Hero() {
   return (
-    <section className="hero" aria-labelledby="hero-title">
-      <div className="heroContent">
-        <p className="heroEyebrow">Independent Graphic Designer</p>
-        <h1 id="hero-title" className="heroHeading">
-          Visual stories shaped with clarity, rhythm, and quiet confidence.
-        </h1>
-        <p className="heroLead">
-          I design brand systems, editorial layouts, and campaign visuals that feel
-          modern, timeless, and unmistakably human.
+    <section className={styles.hero} aria-labelledby="hero-title">
+      <div className={styles.heroContent}>
+        <p className={styles.heroEyebrow}>Linecraft
         </p>
-        <div className="heroActions">
-          <Link className="heroPrimary" href="/portfolio">
+        <h1 id="hero-title" className={styles.heroHeading}>
+          Pushing pixels and bending lines.
+        </h1>
+        <p className={styles.heroLead}>
+          Elevating brands through modern, human-centric design.
+        </p>
+        <div className={styles.heroActions}>
+          <Link className={styles.heroPrimary} href="/portfolio">
             View portfolio
           </Link>
-          <Link className="heroSecondary" href="/about">
+          <Link className={styles.heroSecondary} href="/about">
             Read profile
           </Link>
         </div>
-        <p className="heroMeta">Available for freelance work in 2026.</p>
+        <p className={styles.heroMeta}>Photoshop | Illustrator | Vim |Git | Linux.</p>
       </div>
 
-      <div className="heroVisual" aria-hidden="true">
-        <div className="visualOrb visualOrbA" />
-        <div className="visualOrb visualOrbB" />
-        <div className="visualOrb visualOrbC" />
-        <div className="visualGrid" />
-        <div className="visualCard">
+      <div className={styles.heroVisual} aria-hidden="true">
+        <div className={`${styles.visualOrb} ${styles.visualOrbA}`} />
+        <div className={`${styles.visualOrb} ${styles.visualOrbB}`} />
+        <div className={`${styles.visualOrb} ${styles.visualOrbC}`} />
+        <div className={styles.visualGrid} />
+        <div className={styles.visualCard}>
           <p>Art direction</p>
           <p>Brand identity</p>
           <p>Editorial systems</p>

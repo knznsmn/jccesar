@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import styles from "./PortfolioPreview.module.css";
 
 type PortfolioPreviewProps = {
   src?: string;
@@ -21,9 +22,9 @@ export function PortfolioPreview({ src, alt, title, className, sizes = defaultSi
 
   if (!src || hasError) {
     return (
-      <div className={`portfolioFallback ${className ?? ""}`.trim()} aria-label={`${title} preview unavailable`}>
-        <span className="portfolioFallbackBadge">{initials}</span>
-        <span className="portfolioFallbackText">Preview unavailable</span>
+      <div className={`${styles.portfolioFallback} ${className ?? ""}`.trim()} aria-label={`${title} preview unavailable`}>
+        <span className={styles.portfolioFallbackBadge}>{initials}</span>
+        <span className={styles.portfolioFallbackText}>Preview unavailable</span>
       </div>
     );
   }

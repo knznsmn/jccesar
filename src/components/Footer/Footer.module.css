@@ -1,0 +1,9 @@
+.siteFooter {
+  border-top: 1px solid var(--line);
+  padding: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

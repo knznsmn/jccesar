@@ -1,0 +1,175 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.heroContent,
+.heroVisual {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: 0 16px 40px -28px color-mix(in srgb, var(--hue-deep) 62%, transparent);
+}
+
+.heroContent {
+  padding: clamp(1.15rem, 2vw, 1.6rem);
+  animation: riseIn 520ms ease both;
+}
+
+.heroEyebrow {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.heroHeading {
+  margin-top: 0.7rem;
+  font-size: clamp(2.1rem, 5vw, 3.55rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  max-width: 18ch;
+}
+
+.heroLead {
+  margin-top: 0.8rem;
+  max-width: 48ch;
+  color: var(--muted);
+}
+
+.heroActions {
+  margin-top: 1.15rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.heroPrimary,
+.heroSecondary {
+  border: 1px solid var(--line);
+  padding: 0.56rem 0.88rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.heroPrimary {
+  border-color: color-mix(in srgb, var(--focus) 72%, var(--line));
+  background: color-mix(in srgb, var(--focus) 10%, transparent);
+}
+
+.heroSecondary {
+  color: var(--muted);
+}
+
+.heroPrimary:hover,
+.heroPrimary:focus-visible,
+.heroSecondary:hover,
+.heroSecondary:focus-visible {
+  border-color: var(--focus);
+  background: color-mix(in srgb, var(--focus) 16%, transparent);
+  color: var(--foreground);
+}
+
+.heroMeta {
+  margin-top: 1rem;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.heroVisual {
+  position: relative;
+  min-height: 21rem;
+  overflow: hidden;
+  animation: riseIn 620ms ease both;
+}
+
+.visualOrb {
+  position: absolute;
+  border: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+  background: color-mix(in srgb, var(--focus) 12%, transparent);
+  border-radius: 999px;
+}
+
+.visualOrbA {
+  width: 13rem;
+  height: 13rem;
+  left: 10%;
+  top: 12%;
+  animation: floatSlow 10s ease-in-out infinite;
+}
+
+.visualOrbB {
+  width: 9rem;
+  height: 9rem;
+  right: 12%;
+  top: 10%;
+  background: color-mix(in srgb, var(--prompt) 16%, transparent);
+  animation: floatSlow 8.5s ease-in-out infinite reverse;
+}
+
+.visualOrbC {
+  width: 15rem;
+  height: 15rem;
+  right: -10%;
+  bottom: -26%;
+  background: color-mix(in srgb, var(--hue-blan) 38%, transparent);
+  animation: spinSlow 18s linear infinite;
+}
+
+.visualGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--line) 45%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--line) 45%, transparent) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+  opacity: 0.35;
+}
+
+.visualCard {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  width: min(78%, 18rem);
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 84%, transparent);
+  backdrop-filter: blur(4px);
+  padding: 1rem;
+  display: grid;
+  gap: 0.36rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.74rem;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .heroVisual {
+    min-height: 18rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .heroHeading {
+    letter-spacing: -0.03em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroContent,
+  .heroVisual,
+  .visualOrbA,
+  .visualOrbB,
+  .visualOrbC {
+    animation: none;
+  }
+}

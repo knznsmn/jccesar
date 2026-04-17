@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import contents from "@/data/contents.json";
 import { DarkmodeToggle } from "@/components/Darkmode";
+import styles from "./Navigation.module.css";
 
 export function Navigation() {
   const pathname = usePathname();
@@ -65,22 +66,22 @@ export function Navigation() {
   const menuLabel = menuOpen ? "Close menu" : "Open menu";
 
   return (
-    <nav className="siteNav" aria-label="Main" ref={navRef}>
-      <div className="navInner">
+    <nav className={styles.siteNav} aria-label="Main" ref={navRef}>
+      <div className={styles.navInner}>
         <button
           type="button"
-          className={`menuToggle${menuOpen ? " menuToggleOpen" : ""}`}
+          className={`${styles.menuToggle}${menuOpen ? ` ${styles.menuToggleOpen}` : ""}`}
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label={menuLabel}
           aria-expanded={menuOpen}
           aria-controls="mobile-nav-overlay"
         >
-          <span className="menuToggleBar" />
-          <span className="menuToggleBar" />
-          <span className="menuToggleBar" />
+          <span className={styles.menuToggleBar} />
+          <span className={styles.menuToggleBar} />
+          <span className={styles.menuToggleBar} />
         </button>
 
-        <ul className="navList navListDesktop">
+        <ul className={`${styles.navList} ${styles.navListDesktop}`}>
           {contents.navigation.map((item) => {
             const isActive =
               item.link === "/"
@@ -90,7 +91,7 @@ export function Navigation() {
             return (
               <li key={item.link}>
                 <Link
-                  className={`navLink${isActive ? " navLinkActive" : ""}`}
+                  className={`${styles.navLink}${isActive ? ` ${styles.navLinkActive}` : ""}`}
                   href={item.link}
                   aria-current={isActive ? "page" : undefined}
                 >
@@ -99,7 +100,7 @@ export function Navigation() {
               </li>
             );
           })}
-          <li className="navItemToggle">
+          <li className={styles.navItemToggle}>
             <DarkmodeToggle />
           </li>
         </ul>
@@ -107,7 +108,7 @@ export function Navigation() {
 
       <div
         id="mobile-nav-overlay"
-        className={`mobileMenu${menuOpen ? " mobileMenuOpen" : ""}`}
+        className={`${styles.mobileMenu}${menuOpen ? ` ${styles.mobileMenuOpen}` : ""}`}
         aria-hidden={!menuOpen}
         onClick={(event) => {
           if (event.target === event.currentTarget) {
@@ -115,10 +116,10 @@ export function Navigation() {
           }
         }}
       >
-        <div className="mobileMenuInner">
-          <p className="mobileMenuTagline">{contents.website.tagline}</p>
+        <div className={styles.mobileMenuInner}>
+          <p className={styles.mobileMenuTagline}>{contents.website.tagline}</p>
 
-          <ul className="mobileMenuLinks">
+          <ul className={styles.mobileMenuLinks}>
             {contents.navigation.map((item, index) => {
               const isActive =
                 item.link === "/"
@@ -133,7 +134,7 @@ export function Navigation() {
                   }}
                 >
                   <Link
-                    className={`mobileNavLink${isActive ? " mobileNavLinkActive" : ""}`}
+                    className={`${styles.mobileNavLink}${isActive ? ` ${styles.mobileNavLinkActive}` : ""}`}
                     href={item.link}
                     aria-current={isActive ? "page" : undefined}
                     onClick={() => setMenuOpen(false)}

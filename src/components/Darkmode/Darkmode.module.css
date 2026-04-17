@@ -1,0 +1,61 @@
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font: inherit;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 55%, transparent);
+  padding: 0.4rem 0.62rem;
+  cursor: pointer;
+  transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease;
+}
+
+.themeToggle:hover,
+.themeToggle:focus-visible {
+  color: var(--foreground);
+  border-color: var(--focus);
+  background: color-mix(in srgb, var(--focus) 14%, transparent);
+}
+
+.themeTogglePrompt {
+  color: var(--prompt);
+}
+
+.themeToggleState {
+  min-width: 3.9rem;
+  text-align: left;
+}
+
+.themeStateAuto,
+.themeStateLight,
+.themeStateDark {
+  display: none;
+}
+
+.themeStateAuto {
+  display: inline;
+}
+
+:global(:root[data-theme="light"]) .themeStateAuto,
+:global(:root[data-theme="dark"]) .themeStateAuto {
+  display: none;
+}
+
+:global(:root[data-theme="light"]) .themeStateLight {
+  display: inline;
+}
+
+:global(:root[data-theme="dark"]) .themeStateDark {
+  display: inline;
+}
+
+@media (max-width: 700px) {
+  .themeToggle {
+    width: 100%;
+    justify-content: center;
+  }
+}

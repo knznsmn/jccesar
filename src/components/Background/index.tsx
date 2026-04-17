@@ -1,3 +1,5 @@
+import styles from "./Background.module.css";
+
 export function Background() {
-  return <div className="siteBackground" aria-hidden="true" />;
+  return <div className={styles.siteBackground} aria-hidden="true" />;
 }
