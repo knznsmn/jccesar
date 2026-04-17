@@ -74,7 +74,7 @@ export default async function PortfolioDetail({ params }: PortfolioPageProps) {
             Back to portfolio
           </Link>
           <header className="portfolioDetailHeader">
-            <p className="portfolioMeta">Case Study</p>
+            <p className="portfolioMeta">The Archive</p>
             <h1 className="panelTitle">{item.title}</h1>
           </header>
           <div className="portfolioDetailPreview">

@@ -8,19 +8,12 @@ export function Hero() {
         <p className={styles.heroEyebrow}>Linecraft
         </p>
         <h1 id="hero-title" className={styles.heroHeading}>
-          Pushing pixels and bending lines.
+          Pushing pixels & bending lines.
         </h1>
         <p className={styles.heroLead}>
           Elevating brands through modern, human-centric design.
         </p>
-        <div className={styles.heroActions}>
-          <Link className={styles.heroPrimary} href="/portfolio">
-            View portfolio
-          </Link>
-          <Link className={styles.heroSecondary} href="/about">
-            Read profile
-          </Link>
-        </div>
+      
         <p className={styles.heroMeta}>Photoshop | Illustrator | Vim | Git | Linux.</p>
       </div>
 

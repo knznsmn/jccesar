@@ -28,27 +28,25 @@ export default function Portfolio() {
           </p>
           <div className="portfolioList autoFillGrid">
             {contents.portfolio.map((item, index) => (
-              <article
-                className="portfolioItem autoFillItem"
-                key={item.title}
-                data-reveal
-                data-reveal-delay={index * 90}
-              >
-                <div className="portfolioPreviewWrap">
-                  <PortfolioPreview
-                    src={item.preview}
-                    alt={`${item.title} preview`}
-                    title={item.title}
-                    className="portfolioPreview"
-                  />
-                </div>
-                <p className="portfolioMeta">Featured Project</p>
-                <h2>{item.title}</h2>
-                <p>{item.description}</p>
-                <Link className="inlineLink" href={item.link}>
-                  View details
-                </Link>
-              </article>
+              <Link className="cardLink autoFillItem" href={item.link} key={item.title}>
+                <article
+                  className="portfolioItem"
+                  data-reveal
+                  data-reveal-delay={index * 90}
+                >
+                  <div className="portfolioPreviewWrap">
+                    <PortfolioPreview
+                      src={item.preview}
+                      alt={`${item.title} preview`}
+                      title={item.title}
+                      className="portfolioPreview"
+                    />
+                  </div>
+                  <p className="portfolioMeta">Featured Project</p>
+                  <h2>{item.title}</h2>
+                  <p>{item.description}</p>
+                </article>
+              </Link>
             ))}
           </div>
         </section>
@@ -58,26 +56,24 @@ export default function Portfolio() {
           <p className="panelLead">Additional selected projects.</p>
           <div className="autoFillGrid">
             {contents.projects.map((project, index) => (
-              <article
-                className="serviceCard autoFillItem"
-                key={project.title}
-                data-reveal
-                data-reveal-delay={index * 90}
-              >
-                <div className="portfolioPreviewWrap">
-                  <PortfolioPreview
-                    src={project.view}
-                    alt={`${project.title} preview`}
-                    title={project.title}
-                    className="portfolioPreview"
-                  />
-                </div>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <Link className="inlineLink" href={project.link}>
-                  View project
-                </Link>
-              </article>
+              <Link className="cardLink autoFillItem" href={project.link} key={project.title}>
+                <article
+                  className="serviceCard"
+                  data-reveal
+                  data-reveal-delay={index * 90}
+                >
+                  <div className="portfolioPreviewWrap">
+                    <PortfolioPreview
+                      src={project.view}
+                      alt={`${project.title} preview`}
+                      title={project.title}
+                      className="portfolioPreview"
+                    />
+                  </div>
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                </article>
+              </Link>
             ))}
           </div>
         </section>

@@ -266,6 +266,7 @@ main {
   font-size: clamp(1.05rem, 3vw, 1.35rem);
   line-height: 1.45;
   max-width: 60ch;
+  opacity: 0.88;
 }
 
 .stackList {
@@ -290,6 +291,29 @@ main {
 
 .autoFillItem {
   grid-column: auto;
+}
+
+.cardLink {
+  display: block;
+  color: inherit;
+  font-style: normal;
+}
+
+.cardLink .serviceCard,
+.cardLink .portfolioItem,
+.cardLink.workCard {
+  height: 100%;
+  transition: border-color 180ms ease, background-color 180ms ease;
+}
+
+.cardLink:hover .serviceCard,
+.cardLink:focus-visible .serviceCard,
+.cardLink:hover .portfolioItem,
+.cardLink:focus-visible .portfolioItem,
+.cardLink.workCard:hover,
+.cardLink.workCard:focus-visible {
+  border-color: var(--focus);
+  background: color-mix(in srgb, var(--focus) 12%, var(--surface));
 }
 
 .portfolioPreviewWrap {
@@ -436,4 +460,10 @@ main {
     transform: none;
     transition: none;
   }
+}
+
+*,
+*::before,
+*::after {
+  border: none !important;
 }

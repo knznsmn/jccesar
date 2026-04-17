@@ -24,25 +24,23 @@ export default function Home() {
         <section className="workSection" aria-labelledby="selected-work-title">
           <div className="sectionHeader">
             <h2 id="selected-work-title" className="sectionTitle">
-              Selected work
+              Selected works
             </h2>
             <p className="sectionLead">Minimal forms. Strong art direction.</p>
           </div>
           <div className="workGrid">
             {contents.portfolio.slice(0, 3).map((item, index) => (
-              <article
-                className="workCard"
+              <Link
+                className="cardLink workCard"
+                href={item.link}
                 key={item.title}
                 data-reveal
                 data-reveal-delay={index * 90}
               >
-                <p className="workTag">Case Study</p>
+                <p className="workTag">The Archive</p>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
-                <Link className="inlineLink" href={item.link}>
-                  Explore
-                </Link>
-              </article>
+              </Link>
             ))}
           </div>
         </section>
