@@ -8,6 +8,18 @@
   background: var(--background);
 }
 
+.mobileDetails {
+  display: block;
+}
+
+.mobileDetails > summary {
+  list-style: none;
+}
+
+.mobileDetails > summary::-webkit-details-marker {
+  display: none;
+}
+
 .navInner {
   width: min(var(--max-width), 92vw);
   margin: 0 auto;
@@ -92,6 +104,8 @@
   justify-content: center;
   gap: 0.3rem;
   flex-direction: column;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   transition: border-color 180ms ease, background-color 180ms ease;
 }
 
@@ -133,7 +147,7 @@
   transition: opacity 360ms cubic-bezier(0.22, 1, 0.36, 1), transform 460ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.mobileMenuOpen {
+.mobileDetails[open] .mobileMenu {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
@@ -146,6 +160,18 @@
   padding: 5.4rem 0 2rem;
   display: grid;
   grid-template-rows: 1fr auto;
+}
+
+.mobileStateBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--surface) 84%, transparent);
 }
 
 .mobileMenuTagline {
@@ -163,7 +189,7 @@
   transition: opacity 420ms cubic-bezier(0.22, 1, 0.36, 1) 140ms, transform 540ms cubic-bezier(0.2, 1.2, 0.3, 1) 140ms;
 }
 
-.mobileMenuOpen .mobileMenuTagline {
+.mobileDetails[open] .mobileMenuTagline {
   opacity: 1;
   transform: translateY(0);
 }
@@ -180,7 +206,7 @@
   transition: opacity 340ms cubic-bezier(0.22, 1, 0.36, 1) var(--mobile-link-delay, 180ms), transform 500ms cubic-bezier(0.2, 1.2, 0.3, 1) var(--mobile-link-delay, 180ms);
 }
 
-.mobileMenuOpen .mobileMenuLinks li {
+.mobileDetails[open] .mobileMenuLinks li {
   opacity: 1;
   transform: translateY(0);
 }
@@ -236,7 +262,7 @@
   }
 }
 
-@media (max-width: 660px) {
+@media (max-width: 768px) {
   .siteNav {
     z-index: 50;
     min-height: 3.8rem;
@@ -251,13 +277,16 @@
 
   .menuToggle {
     display: inline-flex;
-    position: relative;
-    z-index: 42;
+    position: fixed;
+    top: 0.65rem;
+    left: 4vw;
+    z-index: 60;
+    pointer-events: auto;
   }
 
   .mobileMenuInner {
     width: 100%;
-    padding: 5.4rem 4vw 2rem;
+    padding: 5.2rem 4vw 2rem;
   }
 
   .navListDesktop {
