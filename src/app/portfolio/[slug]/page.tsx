@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { PortfolioPreview } from "@/components/PortfolioPreview";
 import contents from "@/data/contents.json";
+import { getSlugFromLink } from "@/lib/content";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -11,10 +12,6 @@ type PortfolioPageProps = {
     slug: string;
   }>;
 };
-
-function getSlugFromLink(link: string) {
-  return link.split("/").filter(Boolean).at(-1) ?? "";
-}
 
 export function generateStaticParams() {
   return contents.portfolio.map((item) => ({

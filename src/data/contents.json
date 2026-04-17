@@ -38,7 +38,7 @@
             "name": "About",
             "link": "/about",
             "meta": "Behind the Visual.",
-            "view": "/banners/about.jpg"
+            "view": "/banners/about.png"
         }
     ],
     "projects": [

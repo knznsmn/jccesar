@@ -6,11 +6,13 @@ import contents from "@/data/contents.json";
 import Link from "next/link";
 
 export default function Portfolio() {
+  const portfolioNav = contents.navigation.find((item) => item.link === "/portfolio");
+
   const bannerContent = {
-    image: contents.navigation[1]?.view ?? contents.website.metadata.defaultOgImage,
+    image: portfolioNav?.view ?? contents.website.metadata.defaultOgImage,
     eyebrow: "...",
-    title: contents.navigation[1].name,
-    text: contents.navigation[1].meta,
+    title: portfolioNav?.name ?? "Portfolio",
+    text: portfolioNav?.meta ?? contents.website.description,
     ctaLabel: "View portfolio",
     ctaHref: "/portfolio",
   };

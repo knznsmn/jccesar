@@ -5,11 +5,14 @@ import contents from "@/data/contents.json";
 import Link from "next/link";
 
 export default function Projects() {
+  const projectsIntro =
+    "Selected design projects showing identity systems, creative direction, and visual problem solving.";
+
   const bannerContent = {
     image: contents.portfolio[0]?.preview ?? contents.website.metadata.defaultOgImage,
     eyebrow: "...",
-    title: contents.navigation[1].name,
-    text: contents.navigation[1].meta,
+    title: "Projects",
+    text: projectsIntro,
     ctaLabel: "View portfolio",
     ctaHref: "/portfolio",
   };
@@ -21,9 +24,7 @@ export default function Projects() {
       <main className="pageContainer">
         <section className="simplePanel">
           <h1 className="panelTitle">Projects</h1>
-          <p className="panelLead">
-            Selected design projects showing identity systems, creative direction, and visual problem solving.
-          </p>
+          <p className="panelLead">{projectsIntro}</p>
           <div className="serviceGrid">
             {contents.projects.map((project, index) => (
               <article

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { Background } from "@/components/Background";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import contents from "@/data/contents.json";
@@ -9,7 +10,7 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "800"],
-  style: ["normal", "italic"],
+  style: ["normal"],
 });
 
 export const metadata: Metadata = {
@@ -39,14 +40,30 @@ export const metadata: Metadata = {
   },
 };
 
+const themeInitScript = `(() => {
+  try {
+    const storedTheme = window.localStorage.getItem("theme");
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    const initialTheme = storedTheme === "dark" || storedTheme === "light" ? storedTheme : systemTheme;
+
+    document.documentElement.setAttribute("data-theme", initialTheme);
+    document.documentElement.style.colorScheme = initialTheme;
+  } catch {
+    // Ignore initialization errors and keep default styling.
+  }
+})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body>
+        <Script id="theme-init" strategy="beforeInteractive">
+          {themeInitScript}
+        </Script>
         <Background />
         <ScrollReveal />
         <div className="appContent">{children}</div>
