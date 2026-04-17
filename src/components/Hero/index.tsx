@@ -21,7 +21,7 @@ export function Hero() {
             Read profile
           </Link>
         </div>
-        <p className={styles.heroMeta}>Photoshop | Illustrator | Vim |Git | Linux.</p>
+        <p className={styles.heroMeta}>Photoshop | Illustrator | Vim | Git | Linux.</p>
       </div>
 
       <div className={styles.heroVisual} aria-hidden="true">
