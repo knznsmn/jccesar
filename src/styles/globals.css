@@ -965,6 +965,12 @@ i {
   .aboutSkillsGrid {
     grid-template-columns: 1fr;
   }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

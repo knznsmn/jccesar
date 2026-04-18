@@ -85,6 +85,14 @@
     }
 }
 
+@media (max-width: 660px) and (prefers-reduced-motion: no-preference) {
+    .textColumn,
+    .imageColumn {
+        opacity: 1;
+        animation: none;
+    }
+}
+
 @keyframes bannerTextIn {
     from {
         opacity: 0;

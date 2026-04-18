@@ -24,6 +24,11 @@ export function ScrollReveal() {
       return;
     }
 
+    if (typeof window.IntersectionObserver === "undefined") {
+      elements.forEach((element) => element.classList.add("is-visible"));
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
