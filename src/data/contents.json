@@ -9,7 +9,7 @@
                 "titleTemplate": "%s | JCC",
                 "defaultTitle": "JCC | Graphic Design Portfolio",
                 "defaultDescription": "Graphic design portfolio with identity, editorial, and art direction work.",
-                "defaultOgImage": "/portfolio/og-default.jpg",
+                "defaultOgImage": "/banners/portfolio.png",
                 "twitterCard": "summary_large_image"
             },
             "author": {
@@ -27,7 +27,7 @@
             "name": "Home",
             "link": "/",
             "meta": "Crafting narratives through brand systems.",
-            "view": "/banners/home.jpg"
+            "view": "/banners/portfolio.png"
         },
         {
             "name": "Portfolio",

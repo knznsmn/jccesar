@@ -19,13 +19,13 @@ export function Case({ title, image, align, children }: CaseProps) {
         : styles.alignRight;
 
   return (
-    <section className={`${styles.section} ${alignmentClass}`} data-reveal>
-      <div className={styles.textColumn}>
+    <section className={`${styles.section} ${alignmentClass}`}>
+      <div className={styles.textColumn} data-reveal>
         <h2 className={styles.title}>{title}</h2>
         <div className={styles.text}>{children}</div>
       </div>
 
-      <div className={styles.imageColumn}>
+      <div className={styles.imageColumn} data-reveal data-reveal-delay={120}>
         <PortfolioPreview
           src={image}
           alt={`${title} visual`}
