@@ -14,7 +14,20 @@ export function Hero() {
           Elevating brands through modern, human-centric design.
         </p>
       
-        <p className={styles.heroMeta}>Photoshop | Illustrator | Vim | Git | Linux.</p>
+        <p className={styles.heroMeta}>
+          <i className="icon-ps"></i>
+          <i className="icon-ai"></i>
+          <i className="icon-ae"></i>
+          <i className="icon-pr"></i>
+          <i className="icon-html"></i>
+          <i className="icon-css"></i>
+          <i className="icon-js"></i>
+          <i className="icon-vscode"></i>
+          <i className="icon-server"></i>
+          <i className="icon-git"></i>
+          <i className="icon-vim"></i>
+          <i className="icon-linux"></i>
+        </p>
       </div>
 
       <div className={styles.heroVisual} aria-hidden="true">

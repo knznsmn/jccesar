@@ -133,14 +133,8 @@ export function Navigation() {
           <div className={styles.menuContent}>
             {/* Logo */}
             <div className={styles.logoWrap}>
-              <Image
-                src={contents.website.logo}
-                alt={contents.website.name}
-                width={170}
-                height={48}
-                className={styles.logo}
-                priority
-              />
+              <i className="icon-logo"></i>
+              <p>{contents.website.metadata.defaultTitle}</p>
             </div>
 
             {/* Navigation Links */}

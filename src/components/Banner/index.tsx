@@ -24,7 +24,7 @@ export function Banner({ content }: BannerProps) {
             aria-label="Hero banner"
         >
             <div className={`${styles.textColumn} ${!image ? styles.textColumnCentered : ""}`}>
-                {content.eyebrow ? <p className={styles.eyebrow}>{content.eyebrow}</p> : null}
+                {content.eyebrow ? <p className={styles.eyebrow}><i className={`icon-${content.eyebrow}`}></i></p> : null}
                 <h1 className={styles.title}>{content.title}</h1>
                 <p className={styles.text}>{content.text}</p>
                 {!image && content.ctaLabel && content.ctaHref ? (

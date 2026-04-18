@@ -10,7 +10,7 @@ export default function Portfolio() {
 
   const bannerContent = {
     image: portfolioNav?.view ?? contents.website.metadata.defaultOgImage,
-    eyebrow: "...",
+    eyebrow: "portfolio",
     title: portfolioNav?.name ?? "Portfolio",
     text: portfolioNav?.meta ?? contents.website.description,
     ctaLabel: "View portfolio",

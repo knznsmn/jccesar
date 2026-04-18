@@ -6,7 +6,7 @@ import contents from "@/data/contents.json";
 export default function About() {
   const bannerContent = {
     image: contents.navigation[2]?.view ?? contents.website.metadata.defaultOgImage,
-    eyebrow: "...",
+    eyebrow: "about",
     title: "bio",
     text: contents.navigation[2]?.meta ?? contents.website.description,
     ctaLabel: "View portfolio",
@@ -30,7 +30,7 @@ export default function About() {
                 data-reveal
                 data-reveal-delay={index * 90}
               >
-                <h2>{skill.title}</h2>
+                <h2><i className={`icon-${skill.icon}`}></i> {skill.title}</h2>
                 <p>{skill.description}</p>
               </article>
             ))}

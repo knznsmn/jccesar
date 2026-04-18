@@ -75,10 +75,13 @@
 
 .heroMeta {
   margin-top: 1rem;
-  font-size: 0.76rem;
+  font-size: 1.25rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted);
+}
+.heroMeta i {
+    margin-left: .5rem;
 }
 
 .heroVisual {

@@ -1,15 +1,17 @@
 .themeToggle {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.45rem;
   font: inherit;
   font-size: 0.78rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  text-align: center;
   color: var(--muted);
-  border: 1px solid var(--line);
   background: var(--surface);
-  padding: 0.4rem 0.62rem;
+  padding: 0.4rem 0.2rem 0.4rem 0.9rem;
+  border-radius: .35rem 0;
   cursor: pointer;
   transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease;
 }
@@ -27,7 +29,6 @@
 
 .themeToggleState {
   min-width: 3.9rem;
-  text-align: left;
 }
 
 .themeStateAuto,

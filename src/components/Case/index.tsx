@@ -8,9 +8,16 @@ type CaseProps = {
   image?: string;
   align: SectionAlign;
   children: React.ReactNode;
+  sectionKey?: string;
 };
 
-export function Case({ title, image, align, children }: CaseProps) {
+export function Case({
+  title,
+  sectionKey,
+  image,
+  align,
+  children,
+}: CaseProps) {
   const alignmentClass =
     align === "left"
       ? styles.alignLeft
@@ -21,7 +28,11 @@ export function Case({ title, image, align, children }: CaseProps) {
   return (
     <section className={`${styles.section} ${alignmentClass}`}>
       <div className={styles.textColumn} data-reveal>
-        <h2 className={styles.title}>{title}</h2>
+        <h2 className={styles.title}>
+          {sectionKey && <i className={`icon-${sectionKey}`}></i>}
+          {" · "}
+          {title}
+        </h2>
         <div className={styles.text}>{children}</div>
       </div>
 

@@ -44,6 +44,7 @@
     ],
     "portfolio": [
         {
+            "name": "twinbuilding",
             "title": "Twin Building Engineering Design & Services",
             "description": "A visual framework for precision engineering.",
             "link": "/portfolio/twinbuilding",
@@ -77,6 +78,7 @@
             }
         },
         {
+            "name": "fnua",
             "title": "FNÚA Fashion",
             "description": "A comprehensive identity system for luxury fashion.",
             "link": "/portfolio/fnua",
@@ -114,17 +116,20 @@
         {
             "title": "Design",
             "description": "Design and multimedia production using Photoshop, Illustrator, and After Effects.",
-            "link": "/portfolio"
+            "link": "/portfolio",
+            "icon": "design"
         },
         {
             "title": "Development",
             "description": "Web development with HTML, CSS, and JavaScript.",
-            "link": "/portfolio"
+            "link": "/portfolio",
+            "icon": "develop"
         },
         {
             "title": "Deployment",
             "description": "Secure deployment and maintenance on Linux servers via SSH and related tools.",
-            "link": "/portfolio"
+            "link": "/portfolio",
+            "icon": "deploy"
         }
     ]
 }

@@ -143,21 +143,17 @@ export default async function PortfolioDetail({ params }: PortfolioPageProps) {
           </div>
         </section>
 
-        <Case title="The Challenge" image={caseSections.challenge.image} align={caseSections.challenge.align}>
-          <p>{caseSections.challenge.text}</p>
-        </Case>
-
-        <Case title="The Strategy" image={caseSections.strategy.image} align={caseSections.strategy.align}>
-          <p>{caseSections.strategy.text}</p>
-        </Case>
-
-        <Case title="The Execution" image={caseSections.execution.image} align={caseSections.execution.align}>
-          <p>{caseSections.execution.text}</p>
-        </Case>
-
-        <Case title="The Result" image={caseSections.result.image} align={caseSections.result.align}>
-          <p>{caseSections.result.text}</p>
-        </Case>
+        {Object.entries(caseSections).map(([key, section]) => (
+          <Case
+            key={key}
+            title={`The ${key.charAt(0).toUpperCase() + key.slice(1)}`}
+            sectionKey={key}
+            image={section.image}
+            align={section.align}
+          >
+            <p>{section.text}</p>
+          </Case>
+        ))}
       </main>
       <Footer />
     </div>

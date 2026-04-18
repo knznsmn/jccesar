@@ -8,7 +8,7 @@ import contents from "@/data/contents.json";
 export default function Home() {
   const bannerContent = {
     image: contents.navigation[0]?.view ?? contents.website.metadata.defaultOgImage,
-    eyebrow: contents.website.tagline,
+    eyebrow: "logo",
     title: contents.website.author.name,
     text: contents.navigation[0]?.meta ?? contents.website.description,
     ctaLabel: "View portfolio",
@@ -39,7 +39,7 @@ export default function Home() {
                 data-reveal-delay={index * 90}
               >
                 <p className="workTag">The Archive</p>
-                <h3>{item.title}</h3>
+                <h3><i className={`icon-${item.name}`}></i> {item.title}</h3>
                 <p>{item.description}</p>
               </Link>
             ))}

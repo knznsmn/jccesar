@@ -39,7 +39,7 @@ export function DarkmodeToggle() {
       aria-label="Toggle color theme"
       title="Toggle color theme"
     >
-      <span className={styles.themeTogglePrompt}>$</span>
+      <span className={styles.themeTogglePrompt}><i className="icon-dark"></i></span>
       <span>theme:</span>
       <span className={styles.themeToggleState} aria-live="polite">
         <span className={styles.themeStateAuto}>auto</span>
