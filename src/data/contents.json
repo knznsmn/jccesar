@@ -1,9 +1,10 @@
 {
     "website": {
             "name": "JCC",
+            "logo": "/logo.svg",
+            "link": "https://www.jccesar.com/",
             "tagline": "Design. Build. Deploy.",
             "description": "A minimalist portfolio for brand identity, graphic design, and art direction.",
-            "link": "https://www.jccesar.com/",
             "metadata": {
                 "titleTemplate": "%s | JCC",
                 "defaultTitle": "JCC | Graphic Design Portfolio",

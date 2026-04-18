@@ -7,27 +7,27 @@
   top: 0;
   z-index: 50;
   min-height: 3.8rem;
+  display: grid;
+  align-items: center;
   background: transparent;
 }
 
-.menuDetails {
+.mobileDetails {
   display: block;
 }
 
-.menuDetails > summary {
+.mobileDetails > summary {
   list-style: none;
-  cursor: pointer;
 }
 
-.menuDetails > summary::-webkit-details-marker {
+.mobileDetails > summary::-webkit-details-marker {
   display: none;
 }
 
-.menuDetails > :not(summary) {
+.mobileDetails > :not(summary) {
   display: block;
 }
 
-/* Burger Icon */
 .menuToggle {
   display: inline-flex;
   position: fixed;
@@ -38,14 +38,13 @@
   height: clamp(2.55rem, 3.6vw, 2.9rem);
   background: transparent;
   color: var(--foreground);
+  cursor: pointer;
   align-items: center;
   justify-content: center;
   gap: 0.3rem;
   flex-direction: column;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
-  border: none;
-  padding: 0;
   transition: color 180ms ease, transform 200ms ease;
 }
 
@@ -58,32 +57,30 @@
   transform: scale(0.96);
 }
 
-.menuDetails[open] .menuToggle {
+.mobileDetails[open] .menuToggle {
   color: var(--background);
 }
 
-/* Burger bars */
-.bar {
+.menuToggleBar {
   width: 1.38rem;
   height: 2px;
   background: currentcolor;
   transition: transform 520ms cubic-bezier(0.22, 1.2, 0.25, 1), opacity 240ms ease;
 }
 
-.menuDetails[open] .bar:nth-child(1) {
+.menuToggleOpen .menuToggleBar:nth-child(1) {
   transform: translateY(6px) rotate(45deg);
 }
 
-.menuDetails[open] .bar:nth-child(2) {
+.menuToggleOpen .menuToggleBar:nth-child(2) {
   opacity: 0;
 }
 
-.menuDetails[open] .bar:nth-child(3) {
+.menuToggleOpen .menuToggleBar:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* Menu Overlay */
-.menuOverlay {
+.mobileMenu {
   position: fixed;
   inset: 0;
   z-index: 55;
@@ -94,81 +91,85 @@
   pointer-events: none;
   clip-path: circle(0 at var(--reveal-x) var(--reveal-y));
   will-change: clip-path;
-  transition: clip-path 1300ms var(--menu-reveal-ease);
 }
 
-.menuDetails[open] .menuOverlay {
+.mobileDetails[open] .mobileMenu {
   pointer-events: auto;
-  clip-path: circle(170vmax at var(--reveal-x) var(--reveal-y));
+  animation: menuReveal 1300ms var(--menu-reveal-ease) forwards;
 }
 
-.siteNav[data-closing="true"] .menuOverlay {
+.mobileDetails:not([open]) .mobileMenu {
   pointer-events: none;
-  transition-duration: 1000ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  clip-path: circle(0 at var(--reveal-x) var(--reveal-y));
+  animation: menuReveal 1300ms var(--menu-reveal-ease) reverse forwards;
 }
 
-/* Menu Content */
-.menuContent {
+@keyframes menuReveal {
+  from {
+    clip-path: circle(0 at var(--reveal-x) var(--reveal-y));
+  }
+  to {
+    clip-path: circle(170vmax at var(--reveal-x) var(--reveal-y));
+  }
+}
+
+.mobileMenuInner {
   width: 100%;
   min-height: 100dvh;
   padding: 5.2rem 4vw 2rem;
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileMenuGroup {
+  width: min(560px, 92vw);
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
-/* Logo */
-.logoWrap {
+.mobileMenuLogoWrap {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
   transform: translateY(16px);
-  transition:
-    opacity 420ms cubic-bezier(0.22, 1, 0.36, 1) 140ms,
-    transform 540ms cubic-bezier(0.2, 1.2, 0.3, 1) 140ms;
+  transition: opacity 420ms cubic-bezier(0.22, 1, 0.36, 1) 140ms, transform 540ms cubic-bezier(0.2, 1.2, 0.3, 1) 140ms;
 }
 
-.menuDetails[open] .logoWrap {
+.mobileDetails[open] .mobileMenuLogoWrap {
   opacity: 1;
   transform: translateY(0);
 }
 
-.logo {
+.mobileMenuLogo {
   width: min(170px, 42vw);
   height: auto;
   filter: brightness(0) invert(1);
 }
 
-/* Navigation Links */
-.menuLinks {
+.mobileMenuLinks {
   list-style: none;
   width: 100%;
-  max-width: 560px;
   display: grid;
   gap: 0.52rem;
-  padding: 0;
-  margin: 0;
 }
 
-.menuLinks li {
+.mobileMenuLinks li {
   opacity: 0;
   transform: translateY(16px);
-  transition:
-    opacity 340ms cubic-bezier(0.22, 1, 0.36, 1) calc(180ms + (var(--link-index, 0) * 70ms)),
-    transform 500ms cubic-bezier(0.2, 1.2, 0.3, 1) calc(180ms + (var(--link-index, 0) * 70ms));
+  transition: opacity 340ms cubic-bezier(0.22, 1, 0.36, 1) var(--mobile-link-delay, 180ms), transform 500ms cubic-bezier(0.2, 1.2, 0.3, 1) var(--mobile-link-delay, 180ms);
 }
 
-.menuDetails[open] .menuLinks li {
+.mobileDetails[open] .mobileMenuLinks li {
   opacity: 1;
   transform: translateY(0);
 }
 
-.menuLink {
+.mobileNavLink {
   position: relative;
   overflow: hidden;
   display: inline-flex;
@@ -181,25 +182,24 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.82rem;
-  text-decoration: none;
   transition: background-color 180ms ease;
 }
 
-.menuLink::after {
+.mobileNavLink::after {
   content: ">";
   color: color-mix(in srgb, var(--background) 82%, transparent);
 }
 
-.menuLink:hover,
-.menuLink:focus-visible {
+.mobileNavLink:hover,
+.mobileNavLink:focus-visible {
   background: color-mix(in srgb, var(--background) 22%, transparent);
 }
 
-.menuLinkActive {
+.mobileNavLinkActive {
   background: color-mix(in srgb, var(--background) 24%, transparent);
 }
 
-.menuLinkActive::before {
+.mobileNavLinkActive::before {
   content: "";
   position: absolute;
   left: 0;
@@ -212,17 +212,6 @@
   transition: transform 160ms linear;
 }
 
-/* Darkmode Toggle */
-.darkmodeWrap {
+.mobileMenuTools {
   margin-top: 0.2rem;
-  opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity 420ms cubic-bezier(0.22, 1, 0.36, 1) 700ms,
-    transform 540ms cubic-bezier(0.2, 1.2, 0.3, 1) 700ms;
-}
-
-.menuDetails[open] .darkmodeWrap {
-  opacity: 1;
-  transform: translateY(0);
 }

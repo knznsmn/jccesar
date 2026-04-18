@@ -1,132 +1,150 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import contents from "@/data/contents.json";
 import { DarkmodeToggle } from "@/components/Darkmode";
 import styles from "./Navigation.module.css";
 
 export function Navigation() {
   const pathname = usePathname();
+  const detailsRef = useRef<HTMLDetailsElement | null>(null);
+  const toggleRef = useRef<HTMLElement | null>(null);
   const navRef = useRef<HTMLElement | null>(null);
-  const mobileDetailsRef = useRef<HTMLDetailsElement | null>(null);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
+  const setMenuOpen = (open: boolean) => {
+    const details = detailsRef.current;
+    const nav = navRef.current;
 
-    return () => {
+    if (!details || details.open === open) {
+      return;
+    }
+
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+
+    if (nav) {
+      nav.removeAttribute("data-closing");
+    }
+
+    document.body.style.overflow = open ? "hidden" : "";
+
+    if (open) {
+      details.open = true;
+      return;
+    }
+
+    if (nav) {
+      nav.setAttribute("data-closing", "true");
+    }
+
+    closeTimerRef.current = setTimeout(() => {
+      details.open = false;
+      nav?.removeAttribute("data-closing");
       document.body.style.overflow = "";
-    };
-  }, [menuOpen]);
+      closeTimerRef.current = null;
+    }, 1000);
+  };
 
+  // Update reveal origin from burger position
   useEffect(() => {
-    let ticking = false;
+    const updateRevealOrigin = () => {
+      if (!toggleRef.current || !navRef.current) return;
 
-    const updateScrollProgress = () => {
-      const doc = document.documentElement;
-      const maxScrollable = doc.scrollHeight - window.innerHeight;
-      const progress = maxScrollable > 0 ? window.scrollY / maxScrollable : 0;
-      const clamped = Math.min(1, Math.max(0, progress));
+      const rect = toggleRef.current.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
 
-      navRef.current?.style.setProperty("--scroll-progress", clamped.toFixed(4));
-      ticking = false;
+      navRef.current.style.setProperty("--reveal-x", `${centerX}px`);
+      navRef.current.style.setProperty("--reveal-y", `${centerY}px`);
     };
 
-    const onScrollOrResize = () => {
-      if (ticking) {
-        return;
-      }
-
-      ticking = true;
-      window.requestAnimationFrame(updateScrollProgress);
-    };
-
-    updateScrollProgress();
-    window.addEventListener("scroll", onScrollOrResize, { passive: true });
-    window.addEventListener("resize", onScrollOrResize);
-
-    return () => {
-      window.removeEventListener("scroll", onScrollOrResize);
-      window.removeEventListener("resize", onScrollOrResize);
-    };
-  }, [pathname]);
-
-  useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        const details = mobileDetailsRef.current;
-        if (details?.open) {
-          details.open = false;
-          setMenuOpen(false);
-        }
-      }
-    };
-
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    updateRevealOrigin();
+    window.addEventListener("resize", updateRevealOrigin);
+    return () => window.removeEventListener("resize", updateRevealOrigin);
   }, []);
 
-  const menuLabel = menuOpen ? "Close menu" : "Open menu";
+  // Handle menu toggle with explicit click logic for mobile reliability
+  const handleToggleClick = (event: React.MouseEvent<HTMLElement>) => {
+    event.preventDefault();
+    const isOpen = detailsRef.current?.open ?? false;
+    setMenuOpen(!isOpen);
+  };
+
+  // Close menu on link click
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
+  // Close menu on scroll
+  useEffect(() => {
+    const closeOnScroll = () => {
+      if (detailsRef.current?.open) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", closeOnScroll, { passive: true });
+    return () => window.removeEventListener("scroll", closeOnScroll);
+  }, []);
+
+  // Close menu on Escape
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && detailsRef.current?.open) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current) {
+        clearTimeout(closeTimerRef.current);
+      }
+      document.body.style.overflow = "";
+    };
+  }, []);
 
   return (
-    <nav className={styles.siteNav} aria-label="Main" ref={navRef}>
-      <details
-        ref={mobileDetailsRef}
-        className={styles.mobileDetails}
-        onToggle={(event) => {
-          setMenuOpen(event.currentTarget.open);
-        }}
-      >
+    <nav ref={navRef} className={styles.siteNav} aria-label="Main">
+      <details ref={detailsRef} className={styles.menuDetails}>
         <summary
-          className={`${styles.menuToggle}${menuOpen ? ` ${styles.menuToggleOpen}` : ""}`}
-          aria-label={menuLabel}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-nav-overlay"
+          ref={toggleRef}
+          className={styles.menuToggle}
+          aria-label="Toggle navigation menu"
+          onClick={handleToggleClick}
         >
-          <span className={styles.menuToggleBar} />
-          <span className={styles.menuToggleBar} />
-          <span className={styles.menuToggleBar} />
+          <span className={styles.bar} />
+          <span className={styles.bar} />
+          <span className={styles.bar} />
         </summary>
 
-        <div className={styles.navInner}>
-          <ul className={`${styles.navList} ${styles.navListDesktop}`}>
-            {contents.navigation.map((item) => {
-              const isActive =
-                item.link === "/"
-                  ? pathname === item.link
-                  : pathname === item.link || pathname.startsWith(`${item.link}/`);
+        <div className={styles.menuOverlay}>
+          <div className={styles.menuContent}>
+            {/* Logo */}
+            <div className={styles.logoWrap}>
+              <Image
+                src={contents.website.logo}
+                alt={contents.website.name}
+                width={170}
+                height={48}
+                className={styles.logo}
+                priority
+              />
+            </div>
 
-              return (
-                <li key={item.link}>
-                  <Link
-                    className={`${styles.navLink}${isActive ? ` ${styles.navLinkActive}` : ""}`}
-                    href={item.link}
-                    aria-current={isActive ? "page" : undefined}
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              );
-            })}
-            <li className={styles.navItemToggle}>
-              <DarkmodeToggle />
-            </li>
-          </ul>
-        </div>
-
-        <div id="mobile-nav-overlay" className={styles.mobileMenu} aria-hidden={!menuOpen}>
-          <div className={styles.mobileMenuInner}>
-            {process.env.NODE_ENV !== "production" ? (
-              <span className={styles.mobileStateBadge}>
-                menu: {menuOpen ? "open" : "closed"}
-              </span>
-            ) : null}
-
-            <p className={styles.mobileMenuTagline}>{contents.website.tagline}</p>
-
-            <ul className={styles.mobileMenuLinks}>
+            {/* Navigation Links */}
+            <ul className={styles.menuLinks}>
               {contents.navigation.map((item, index) => {
                 const isActive =
                   item.link === "/"
@@ -134,23 +152,14 @@ export function Navigation() {
                     : pathname === item.link || pathname.startsWith(`${item.link}/`);
 
                 return (
-                  <li
-                    key={`mobile-${item.link}`}
-                    style={{
-                      ["--mobile-link-delay" as string]: `${180 + index * 70}ms`,
-                    }}
-                  >
+                  <li key={item.link} style={{ "--link-index": index } as React.CSSProperties}>
                     <Link
-                      className={`${styles.mobileNavLink}${isActive ? ` ${styles.mobileNavLinkActive}` : ""}`}
                       href={item.link}
+                      className={`${styles.menuLink}${
+                        isActive ? ` ${styles.menuLinkActive}` : ""
+                      }`}
+                      onClick={handleLinkClick}
                       aria-current={isActive ? "page" : undefined}
-                      onClick={() => {
-                        const details = mobileDetailsRef.current;
-                        if (details) {
-                          details.open = false;
-                        }
-                        setMenuOpen(false);
-                      }}
                     >
                       {item.name}
                     </Link>
@@ -158,6 +167,11 @@ export function Navigation() {
                 );
               })}
             </ul>
+
+            {/* Darkmode Toggle */}
+            <div className={styles.darkmodeWrap}>
+              <DarkmodeToggle />
+            </div>
           </div>
         </div>
       </details>

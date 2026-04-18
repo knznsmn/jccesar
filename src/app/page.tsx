@@ -7,6 +7,7 @@ import contents from "@/data/contents.json";
 
 export default function Home() {
   const bannerContent = {
+    image: contents.navigation[0]?.view ?? contents.website.metadata.defaultOgImage,
     eyebrow: contents.website.tagline,
     title: contents.website.author.name,
     text: contents.navigation[0]?.meta ?? contents.website.description,
