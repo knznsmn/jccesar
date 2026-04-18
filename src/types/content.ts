@@ -5,13 +5,6 @@ export type NavigationItem = {
   view: string;
 };
 
-export type Project = {
-  title: string;
-  description: string;
-  link: string;
-  view: string;
-};
-
 export type PortfolioItem = {
   title: string;
   description: string;
@@ -60,7 +53,6 @@ export type Website = {
 export type Contents = {
   website: Website;
   navigation: NavigationItem[];
-  projects: Project[];
   portfolio: PortfolioItem[];
   skills: Skill[];
 };

@@ -42,20 +42,6 @@
             "view": "/banners/about.png"
         }
     ],
-    "projects": [
-        {
-            "title": "Saranghe Restaurant",
-            "description": "Brand identity for a Korean restaurant, including logo, color palette, and core visual system.",
-            "link": "/projects/saranghe",
-            "view": "/projects/saranghe/preview.jpg"
-        },
-        {
-            "title": "Mountain View",
-            "description": "A personal project for experimenting with multimedia art, interaction, and self-hosted tools.",
-            "link": "/projects/mountainview",
-            "view": "/projects/mountainview/preview.jpg"
-        }
-    ],
     "portfolio": [
         {
             "title": "Twin Building Engineering Design & Services",
@@ -84,17 +70,17 @@
         {
             "title": "Design",
             "description": "Design and multimedia production using Photoshop, Illustrator, and After Effects.",
-            "link": "/projects"
+            "link": "/portfolio"
         },
         {
             "title": "Development",
             "description": "Web development with HTML, CSS, and JavaScript.",
-            "link": "/projects"
+            "link": "/portfolio"
         },
         {
             "title": "Deployment",
             "description": "Secure deployment and maintenance on Linux servers via SSH and related tools.",
-            "link": "/projects"
+            "link": "/portfolio"
         }
     ]
 }

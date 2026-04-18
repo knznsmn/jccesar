@@ -50,33 +50,6 @@ export default function Portfolio() {
             ))}
           </div>
         </section>
-
-        <section className="simplePanel">
-          <h2 className="panelTitle">Et Cetera</h2>
-          <p className="panelLead">Additional selected projects.</p>
-          <div className="autoFillGrid">
-            {contents.projects.map((project, index) => (
-              <Link className="cardLink autoFillItem" href={project.link} key={project.title}>
-                <article
-                  className="serviceCard"
-                  data-reveal
-                  data-reveal-delay={index * 90}
-                >
-                  <div className="portfolioPreviewWrap">
-                    <PortfolioPreview
-                      src={project.view}
-                      alt={`${project.title} preview`}
-                      title={project.title}
-                      className="portfolioPreview"
-                    />
-                  </div>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                </article>
-              </Link>
-            ))}
-          </div>
-        </section>
       </main>
       <Footer />
     </div>
