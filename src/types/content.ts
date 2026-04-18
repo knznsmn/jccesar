@@ -10,6 +10,28 @@ export type PortfolioItem = {
   description: string;
   link: string;
   preview: string;
+  sections?: {
+    challenge: {
+      text: string;
+      image?: string;
+      align: "left" | "right" | "center";
+    };
+    strategy: {
+      text: string;
+      image?: string;
+      align: "left" | "right" | "center";
+    };
+    execution: {
+      text: string;
+      image?: string;
+      align: "left" | "right" | "center";
+    };
+    result: {
+      text: string;
+      image?: string;
+      align: "left" | "right" | "center";
+    };
+  };
   metadata: {
     title: string;
     description: string;

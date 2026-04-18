@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Case } from "@/components/Case";
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { PortfolioPreview } from "@/components/PortfolioPreview";
@@ -11,6 +12,16 @@ type PortfolioPageProps = {
   params: Promise<{
     slug: string;
   }>;
+};
+
+type SectionAlign = "left" | "right" | "center";
+
+const normalizeAlign = (align?: string): SectionAlign => {
+  if (align === "left" || align === "right" || align === "center") {
+    return align;
+  }
+
+  return "right";
 };
 
 export function generateStaticParams() {
@@ -65,6 +76,48 @@ export default async function PortfolioDetail({ params }: PortfolioPageProps) {
     notFound();
   }
 
+  const sections = {
+    challenge: item.sections?.challenge ?? {
+      text: item.description,
+      image: item.preview,
+      align: "right" as const,
+    },
+    strategy: item.sections?.strategy ?? {
+      text: item.description,
+      image: item.preview,
+      align: "left" as const,
+    },
+    execution: item.sections?.execution ?? {
+      text: item.description,
+      image: item.preview,
+      align: "center" as const,
+    },
+    result: item.sections?.result ?? {
+      text: item.description,
+      image: item.preview,
+      align: "right" as const,
+    },
+  };
+
+  const caseSections = {
+    challenge: {
+      ...sections.challenge,
+      align: normalizeAlign(sections.challenge.align),
+    },
+    strategy: {
+      ...sections.strategy,
+      align: normalizeAlign(sections.strategy.align),
+    },
+    execution: {
+      ...sections.execution,
+      align: normalizeAlign(sections.execution.align),
+    },
+    result: {
+      ...sections.result,
+      align: normalizeAlign(sections.result.align),
+    },
+  };
+
   return (
     <div className="siteShell">
       <Navigation />
@@ -89,6 +142,22 @@ export default async function PortfolioDetail({ params }: PortfolioPageProps) {
             <p>{item.description}</p>
           </div>
         </section>
+
+        <Case title="The Challenge" image={caseSections.challenge.image} align={caseSections.challenge.align}>
+          <p>{caseSections.challenge.text}</p>
+        </Case>
+
+        <Case title="The Strategy" image={caseSections.strategy.image} align={caseSections.strategy.align}>
+          <p>{caseSections.strategy.text}</p>
+        </Case>
+
+        <Case title="The Execution" image={caseSections.execution.image} align={caseSections.execution.align}>
+          <p>{caseSections.execution.text}</p>
+        </Case>
+
+        <Case title="The Result" image={caseSections.result.image} align={caseSections.result.align}>
+          <p>{caseSections.result.text}</p>
+        </Case>
       </main>
       <Footer />
     </div>

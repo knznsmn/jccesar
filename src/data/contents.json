@@ -48,6 +48,28 @@
             "description": "A visual framework for precision engineering.",
             "link": "/portfolio/twinbuilding",
             "preview": "/portfolio/twinbuilding/preview.jpg",
+            "sections": {
+                "challenge": {
+                    "text": "Twin Building needed an identity that communicated technical precision and trust while still feeling contemporary. The existing visual language lacked consistency across touchpoints, which made the brand feel fragmented.",
+                    "image": "/portfolio/twinbuilding/challenge.jpg",
+                    "align": "right"
+                },
+                "strategy": {
+                    "text": "The approach focused on building a strong typographic hierarchy, a restrained color system, and repeatable layout rules. Every choice was guided by clarity, structure, and ease of application across print and digital assets.",
+                    "image": "/portfolio/twinbuilding/strategy.jpg",
+                    "align": "left"
+                },
+                "execution": {
+                    "text": "The visual system was translated into core brand materials, presentation templates, and communication pieces. The design language emphasized clean geometry, deliberate spacing, and disciplined visual rhythm.",
+                    "image": "/portfolio/twinbuilding/execution.jpg",
+                    "align": "center"
+                },
+                "result": {
+                    "text": "The final identity established a coherent and professional brand presence. It improved recognition, made materials easier to produce consistently, and positioned Twin Building as a reliable engineering partner.",
+                    "image": "/portfolio/twinbuilding/result.jpg",
+                    "align": "right"
+                }
+            },
             "metadata": {
                 "title": "Twin Building Engineering Design & Services",
                 "description": "Case study on identity and visual system design for an engineering firm.",
@@ -59,6 +81,28 @@
             "description": "A comprehensive identity system for luxury fashion.",
             "link": "/portfolio/fnua",
             "preview": "/portfolio/fnua/preview.jpg",
+            "sections": {
+                "challenge": {
+                    "text": "FNÚA required a brand expression that felt premium yet approachable across campaigns and editorial assets. The challenge was to balance elegance with clarity while preserving a distinct point of view.",
+                    "image": "/portfolio/fnua/challenge.jpg",
+                    "align": "right"
+                },
+                "strategy": {
+                    "text": "The strategy centered on expressive typography, refined spacing, and a restrained visual system that could adapt to seasonal collections. Consistency and flexibility were treated as equal priorities.",
+                    "image": "/portfolio/fnua/strategy.jpg",
+                    "align": "left"
+                },
+                "execution": {
+                    "text": "The system was applied across lookbook directions, social compositions, and supporting branded materials. Layout structures and image treatment rules were defined to keep outputs cohesive.",
+                    "image": "/portfolio/fnua/execution.jpg",
+                    "align": "center"
+                },
+                "result": {
+                    "text": "FNÚA gained a unified and recognizable visual identity that translated smoothly across channels. The brand now presents a stronger narrative and a more confident market presence.",
+                    "image": "/portfolio/fnua/result.jpg",
+                    "align": "right"
+                }
+            },
             "metadata": {
                 "title": "FNÚA Fashion",
                 "description": "Case study on fashion branding with sustainable direction and expressive typography.",
