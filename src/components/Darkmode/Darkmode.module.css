@@ -8,7 +8,7 @@
   text-transform: uppercase;
   color: var(--muted);
   border: 1px solid var(--line);
-  background: color-mix(in srgb, var(--surface) 55%, transparent);
+  background: var(--surface);
   padding: 0.4rem 0.62rem;
   cursor: pointer;
   transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease;
@@ -18,7 +18,7 @@
 .themeToggle:focus-visible {
   color: var(--foreground);
   border-color: var(--focus);
-  background: color-mix(in srgb, var(--focus) 14%, transparent);
+  background: var(--surface);
 }
 
 .themeTogglePrompt {

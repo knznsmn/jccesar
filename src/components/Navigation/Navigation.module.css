@@ -88,9 +88,7 @@
   inset: 0;
   z-index: 55;
   color: var(--background);
-  background:
-    radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--background) 20%, transparent), transparent 34%),
-    linear-gradient(160deg, color-mix(in srgb, var(--foreground) 92%, black), var(--foreground));
+  background: var(--foreground);
   pointer-events: none;
   clip-path: circle(0 at var(--reveal-x) var(--reveal-y));
   will-change: clip-path;
@@ -177,39 +175,25 @@
   align-items: center;
   padding: 0.82rem 0.9rem;
   color: var(--background);
-  background: color-mix(in srgb, var(--background) 12%, transparent);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.82rem;
   text-decoration: none;
-  transition: background-color 180ms ease;
+  transition: color 180ms ease;
 }
 
 .menuLink::after {
   content: ">";
-  color: color-mix(in srgb, var(--background) 82%, transparent);
+  color: var(--background);
 }
 
 .menuLink:hover,
 .menuLink:focus-visible {
-  background: color-mix(in srgb, var(--background) 22%, transparent);
+  color: var(--focus);
 }
 
 .menuLinkActive {
-  background: color-mix(in srgb, var(--background) 24%, transparent);
-}
-
-.menuLinkActive::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--background);
-  transform-origin: bottom center;
-  transform: scaleY(var(--scroll-progress));
-  transition: transform 160ms linear;
+  color: var(--focus);
 }
 
 /* Darkmode Toggle */
