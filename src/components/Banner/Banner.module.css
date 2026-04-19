@@ -89,6 +89,7 @@
     .textColumn,
     .imageColumn {
         opacity: 1;
+        transform: none;
         animation: none;
     }
 }

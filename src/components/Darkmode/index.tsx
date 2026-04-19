@@ -1,50 +1,72 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+import {
+  THEME_STORAGE_KEY,
+  applyTheme,
+  resolveInitialTheme,
+  type Theme,
+} from "@/lib/theme";
 import styles from "./Darkmode.module.css";
 
-type Theme = "light" | "dark";
-
-function applyTheme(theme: Theme) {
-  document.documentElement.setAttribute("data-theme", theme);
-  document.documentElement.style.colorScheme = theme;
-}
-
 export function DarkmodeToggle() {
-  useEffect(() => {
-    const storedTheme = window.localStorage.getItem("theme");
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-    const initialTheme = storedTheme === "dark" || storedTheme === "light"
-      ? (storedTheme as Theme)
-      : systemTheme;
+  const pulseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") {
+      return "light";
+    }
 
-    applyTheme(initialTheme);
+    return resolveInitialTheme();
+  });
+  const [isPulsing, setIsPulsing] = useState(false);
+
+  useEffect(() => {
+    return () => {
+      if (pulseTimerRef.current) {
+        clearTimeout(pulseTimerRef.current);
+      }
+    };
   }, []);
+
+  const triggerPulse = () => {
+    if (pulseTimerRef.current) {
+      clearTimeout(pulseTimerRef.current);
+    }
+
+    setIsPulsing(true);
+    pulseTimerRef.current = setTimeout(() => {
+      setIsPulsing(false);
+      pulseTimerRef.current = null;
+    }, 520);
+  };
 
   const onToggleTheme = () => {
     const activeTheme = document.documentElement.getAttribute("data-theme");
-    const toggledTheme: Theme = activeTheme === "dark" ? "light" : "dark";
+    const resolvedActive: Theme = activeTheme === "dark" ? "dark" : "light";
+    const nextTheme: Theme = resolvedActive === "dark" ? "light" : "dark";
 
-    applyTheme(toggledTheme);
-    window.localStorage.setItem("theme", toggledTheme);
+    applyTheme(nextTheme);
+    try {
+      window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+    } catch {
+      // Ignore storage errors (private mode, restricted contexts).
+    }
+
+    setTheme(nextTheme);
+    triggerPulse();
   };
 
   return (
     <button
       type="button"
-      className={styles.themeToggle}
+      className={`${styles.themeToggle} ${isPulsing ? styles.themeTogglePulsing : ""}`.trim()}
       onClick={onToggleTheme}
+      aria-pressed={theme === "dark"}
       aria-label="Toggle color theme"
-      title="Toggle color theme"
+      title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
     >
-      <span className={styles.themeTogglePrompt}><i className="icon-dark"></i></span>
-      <span>theme:</span>
-      <span className={styles.themeToggleState} aria-live="polite">
-        <span className={styles.themeStateAuto}>auto</span>
-        <span className={styles.themeStateLight}>light</span>
-        <span className={styles.themeStateDark}>dark</span>
+      <span className={styles.icon} aria-hidden="true">
+        <i className="icon-dark"></i>
       </span>
     </button>
   );

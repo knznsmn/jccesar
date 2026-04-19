@@ -5,9 +5,9 @@ import { PortfolioPreview } from "@/components/PortfolioPreview";
 import contents from "@/data/contents.json";
 import Link from "next/link";
 
-export default function Portfolio() {
-  const portfolioNav = contents.navigation.find((item) => item.link === "/portfolio");
+const portfolioNav = contents.navigation.find((item) => item.link === "/portfolio");
 
+export default function Portfolio() {
   const bannerContent = {
     image: portfolioNav?.view ?? contents.website.metadata.defaultOgImage,
     eyebrow: "portfolio",
@@ -27,13 +27,9 @@ export default function Portfolio() {
             Visual outputs and explorations.
           </p>
           <div className="portfolioList autoFillGrid">
-            {contents.portfolio.map((item, index) => (
+            {contents.portfolio.map((item) => (
               <Link className="cardLink autoFillItem" href={item.link} key={item.title}>
-                <article
-                  className="portfolioItem"
-                  data-reveal
-                  data-reveal-delay={index * 90}
-                >
+                <article className="portfolioItem">
                   <div className="portfolioPreviewWrap">
                     <PortfolioPreview
                       src={item.preview}

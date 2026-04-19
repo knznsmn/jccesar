@@ -40,6 +40,7 @@ export type PortfolioItem = {
 };
 
 export type Skill = {
+  icon: string;
   title: string;
   description: string;
   link: string;

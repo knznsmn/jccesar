@@ -15,6 +15,18 @@ type PortfolioPageProps = {
 };
 
 type SectionAlign = "left" | "right" | "center";
+type SectionKey = "challenge" | "strategy" | "execution" | "result";
+
+const SECTION_ORDER: SectionKey[] = ["challenge", "strategy", "execution", "result"];
+
+const portfolioBySlug = new Map(
+  contents.portfolio.map((item) => [getSlugFromLink(item.link), item])
+);
+
+const getPortfolioBySlug = (slug: string) => portfolioBySlug.get(slug);
+
+const toSectionTitle = (key: SectionKey) =>
+  `The ${key.charAt(0).toUpperCase()}${key.slice(1)}`;
 
 const normalizeAlign = (align?: string): SectionAlign => {
   if (align === "left" || align === "right" || align === "center") {
@@ -25,14 +37,12 @@ const normalizeAlign = (align?: string): SectionAlign => {
 };
 
 export function generateStaticParams() {
-  return contents.portfolio.map((item) => ({
-    slug: getSlugFromLink(item.link),
-  }));
+  return Array.from(portfolioBySlug.keys()).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PortfolioPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const item = contents.portfolio.find((entry) => getSlugFromLink(entry.link) === slug);
+  const item = getPortfolioBySlug(slug);
 
   if (!item) {
     return {
@@ -70,7 +80,7 @@ export async function generateMetadata({ params }: PortfolioPageProps): Promise<
 
 export default async function PortfolioDetail({ params }: PortfolioPageProps) {
   const { slug } = await params;
-  const item = contents.portfolio.find((entry) => getSlugFromLink(entry.link) === slug);
+  const item = getPortfolioBySlug(slug);
 
   if (!item) {
     notFound();
@@ -99,7 +109,7 @@ export default async function PortfolioDetail({ params }: PortfolioPageProps) {
     },
   };
 
-  const caseSections = {
+  const caseSections: Record<SectionKey, { text: string; image?: string; align: SectionAlign }> = {
     challenge: {
       ...sections.challenge,
       align: normalizeAlign(sections.challenge.align),
@@ -122,7 +132,7 @@ export default async function PortfolioDetail({ params }: PortfolioPageProps) {
     <div className="siteShell">
       <Navigation />
       <main className="pageContainer">
-        <section className="simplePanel portfolioDetail" data-reveal>
+        <section className="simplePanel portfolioDetail">
           <Link className="portfolioBackLink" href="/portfolio">
             Back to portfolio
           </Link>
@@ -143,17 +153,21 @@ export default async function PortfolioDetail({ params }: PortfolioPageProps) {
           </div>
         </section>
 
-        {Object.entries(caseSections).map(([key, section]) => (
+        {SECTION_ORDER.map((key) => {
+          const section = caseSections[key];
+
+          return (
           <Case
             key={key}
-            title={`The ${key.charAt(0).toUpperCase() + key.slice(1)}`}
+            title={toSectionTitle(key)}
             sectionKey={key}
             image={section.image}
             align={section.align}
           >
             <p>{section.text}</p>
           </Case>
-        ))}
+          );
+        })}
       </main>
       <Footer />
     </div>

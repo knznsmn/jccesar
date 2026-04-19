@@ -27,7 +27,7 @@ export function Case({
 
   return (
     <section className={`${styles.section} ${alignmentClass}`}>
-      <div className={styles.textColumn} data-reveal>
+      <div className={styles.textColumn}>
         <h2 className={styles.title}>
           {sectionKey && <i className={`icon-${sectionKey}`}></i>}
           {" · "}
@@ -36,7 +36,7 @@ export function Case({
         <div className={styles.text}>{children}</div>
       </div>
 
-      <div className={styles.imageColumn} data-reveal data-reveal-delay={120}>
+      <div className={styles.imageColumn}>
         <PortfolioPreview
           src={image}
           alt={`${title} visual`}

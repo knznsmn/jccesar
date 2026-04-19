@@ -4,6 +4,7 @@ import Script from "next/script";
 import { Background } from "@/components/Background";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import contents from "@/data/contents.json";
+import { THEME_STORAGE_KEY } from "@/lib/theme";
 import "@/styles/globals.css";
 
 const inter = Inter({
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
 
 const themeInitScript = `(() => {
   try {
-    const storedTheme = window.localStorage.getItem("theme");
+    const storedTheme = window.localStorage.getItem("${THEME_STORAGE_KEY}");
     const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     const initialTheme = storedTheme === "dark" || storedTheme === "light" ? storedTheme : systemTheme;
 

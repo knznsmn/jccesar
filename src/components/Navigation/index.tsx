@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
@@ -162,7 +161,6 @@ export function Navigation() {
               })}
             </ul>
 
-            {/* Darkmode Toggle */}
             <div className={styles.darkmodeWrap}>
               <DarkmodeToggle />
             </div>
